@@ -36,7 +36,7 @@ gulp.task('watch', ['inject', 'jade-dev'], function ()
         }
     });
 
-    gulp.watch(path.join(conf.paths.src, '/app/**/*.{js,ls}'), function (event)
+    gulp.watch(path.join(conf.paths.src, '/app/**/*.{js,ls,json.ls}'), function (event)
     {
         if ( isOnlyChange(event) )
         {

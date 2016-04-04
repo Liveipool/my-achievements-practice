@@ -18,6 +18,9 @@ gulp.task('inject-reload', ['inject'], function ()
     browserSync.reload();
 });
 
+var jsonFilter = $.filter(['**/*', '!**/*.json'], {restore: true});
+
+
 gulp.task('inject', ['scripts', 'styles'], function ()
 {
     var injectStyles = gulp.src([
@@ -34,7 +37,12 @@ gulp.task('inject', ['scripts', 'styles'], function ()
         ]);
 
     var injectScripts = $.mergeStream(_livescripts, _javascripts)
-        .pipe($.angularFilesort()).on('error', conf.errorHandler('AngularFilesort'));
+        .pipe(jsonFilter)
+        // .pipe($.debug())
+        .pipe($.angularFilesort()).on('error', conf.errorHandler('AngularFilesort'))
+        .pipe(jsonFilter.restore)
+        // .pipe($.debug());
+
 
     var injectOptions = {
         ignorePath  : [conf.paths.src, path.join(conf.paths.tmp, '/serve')],

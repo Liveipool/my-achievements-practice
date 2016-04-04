@@ -1,12 +1,15 @@
 'use strict'
+
+# -------- 功能分组 -------- #
+angular.module 'homework', [] .config ($state-provider)-> $state-provider.state 'app.homework', abstract: true
+
+
 angular.module 'fuse' 
 
 .config navigations = ($state-provider, $translate-partial-loader-provider, ms-navigation-service-provider)!->
   'ngInject'
-  nav = ms-navigation-service-provider
+  nav = ms-navigation-service-provider  
 
-  # -------- 功能分组 -------- #
-  angular.module 'homework', [] .config ($state-provider)-> $state-provider.state 'app.homework', abstract: true
 
 
 
