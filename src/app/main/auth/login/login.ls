@@ -20,7 +20,7 @@ angular.module 'app.auth.login', []
             console.log "user: #{@form.username} is registed? ", result.is-registed
             if result.is-registed 
               @invalid-user = false
-              $state.go 'app.sample'
+              $state.go 'app.test.boxes'
             else
               @invalid-user = true
   }
@@ -34,7 +34,8 @@ angular.module 'app.auth.login', []
 
 .run ($root-scope, $state, authService)!->
   $root-scope.$on '$stateChangeStart', (event, to-state)!->
-    return if !!authService.current-user or to-state.name is 'app.login'
+    return true # 注意：开发时使用，避免每次都要登录
+    # return if !!authService.current-user or to-state.name is 'app.login'
 
     event.prevent-default!
     $state.go 'app.login'

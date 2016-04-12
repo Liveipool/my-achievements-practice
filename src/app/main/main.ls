@@ -1,7 +1,7 @@
 'use strict'
 
 # -------- 功能分组 -------- #
-angular.module 'homework', [] .config ($state-provider)-> $state-provider.state 'app.homework', abstract: true
+angular.module 'app.test' .config ($state-provider)-> $state-provider.state 'app.test', abstract: true
 
 
 angular.module 'fuse' 
@@ -14,9 +14,11 @@ angular.module 'fuse'
 
 
   # --------- 菜单 ----------- #
-  nav.save-item 'fuse',          {title : 'SAMPLE'      , group : true,  weight: 1 }
+  nav.save-item 'test',          {title : '测试'     , group : true,  weight: 1 }
 
-  nav.save-item 'fuse.sample',  {title : 'Sample'   icon : 'icon-tile-four',  state : 'app.sample',   weight   : 1 }
+  nav.save-item 'test.boxes',    {title : '测试盒'   ,   image : '/assets/images/menu/test-box.svg',  state : 'app.test.boxes',   weight   : 1 }
+
+  nav.save-item 'test.plans',    {title : '测试计划'   ,  image : '/assets/images/menu/test-plan.svg',  state : 'app.test.plans',   weight   : 1 }
   
   nav.save-item 'user',  {title : "用户"   , group: true,   weight   : 2,  class: 'user' } 
 
@@ -39,14 +41,14 @@ angular.module 'fuse'
 
     # --------------------- 管理员视图 ---------------------------- #
     
-    # if $root-scope.current-user? and 'admin' in $root-scope.current-user.roles
-    #   nav.save-item 'admin',        {title : '系统管理'   , group : true,  weight: 1 }
-    #   nav.save-item 'admin.schools',  {title : '学校管理'   , icon  : 'icon-school',   state : 'app.admin.schools',    weight   : 1 }
-    #   nav.save-item 'admin.problems',  {title : '题库管理'   , icon  : 'icon-folder-multiple-outline',   state : 'app.admin.problems',    weight   : 1 }
-    # else
-    #   nav.delete-item 'admin'
-    #   nav.delete-item 'admin.schools'
-    #   nav.delete-item 'admin.problems'
+    if $root-scope.current-user? and 'admin' in $root-scope.current-user.roles
+      nav.save-item 'admin',            {title : '系统管理'   , group : true,  weight: 1 }
+      nav.save-item 'admin.users',      {title : '用户'      , icon  : 'icon-account-multiple',   state : 'app.admin.users',    weight   : 1 }
+      nav.save-item 'admin.companies',  {title : '公司'      , image  : '/assets/images/menu/company.svg',   state : 'app.admin.companies',    weight   : 1 }
+    else
+      nav.delete-item 'admin'
+      nav.delete-item 'admin.users'
+      nav.delete-item 'admin.companies'
 
 
   nav.set-folded true
