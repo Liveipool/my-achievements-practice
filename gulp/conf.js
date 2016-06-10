@@ -55,8 +55,8 @@ exports.jade = function()
             path.join(exports.paths.tmp, '/serve/app/**/*.jade'),
             '!' + path.join(exports.paths.src, 'app/**/*.partial.jade')
         ])
-        .pipe($.jade({pretty: true}))
-        .pipe($.size())
+        .pipe($.jade({pretty: true, basedir: '.'}))
+            .pipe($.size())
         .on('error', exports.errorHandler('livescript'))
 }
 

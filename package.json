@@ -1,7 +1,9 @@
 {
   "name": "fuse-angular-material",
   "version": "1.2.2",
-  "dependencies": {},
+  "dependencies": {
+    "gfc-schema-hcp-basic": "0.0.4"
+  },
   "scripts": {
     "test": "gulp test"
   },

@@ -9,7 +9,7 @@ var $ = require('gulp-load-plugins')({
 });
 
 
-gulp.task('partials', ['gfc'], function ()
+gulp.task('partials', function ()
 {
     var _jade = conf.jade();
     var _html = gulp.src([

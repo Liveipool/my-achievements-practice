@@ -60,6 +60,13 @@
 
         <div id="main" class="animate-slide-up" ui-view="main" layout="column"></div>
 
+<!-- TODO：Ajv的bower版本有问题，无法通过bower inject到这来，故而现有预编译好的 -->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ajv/4.1.1/ajv.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ajv/4.1.1/ajv.bundle.js"></script> -->
+
+        <script src="../bower_components/lodash/dist/lodash.js"></script>
+
         <!-- <ms-theme-options></ms-theme-options> -->
 
         <!-- build:js(src) scripts/vendor.js -->

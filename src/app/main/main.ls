@@ -1,7 +1,5 @@
 'use strict'
 
-# -------- 功能分组 -------- #
-angular.module 'app.test' .config ($state-provider)-> $state-provider.state 'app.test', abstract: true
 
 
 angular.module 'fuse' 
@@ -14,12 +12,9 @@ angular.module 'fuse'
 
 
   # --------- 菜单 ----------- #
-  nav.save-item 'test',          {title : '测试'     , group : true,  weight: 1 }
+  nav.save-item 'example',          {title : '示例'     , group : true,  weight: 1 } # 分组用来容纳示例
+    
 
-  nav.save-item 'test.boxes',    {title : '测试盒'   ,   image : '/assets/images/menu/test-box.svg',  state : 'app.test.boxes',   weight   : 1 }
-
-  nav.save-item 'test.plans',    {title : '测试计划'   ,  image : '/assets/images/menu/test-plan.svg',  state : 'app.test.plans',   weight   : 1 }
-  
   nav.save-item 'user',  {title : "用户"   , group: true,   weight   : 2,  class: 'user' } 
 
 .controller 'MainController', ($scope, $root-scope, ms-navigation-service, $state)!->

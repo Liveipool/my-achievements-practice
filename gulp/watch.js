@@ -11,13 +11,13 @@ function isOnlyChange(event)
     return event.type === 'changed';
 }
 
-gulp.task('jade-dev', function(){
+gulp.task('jade-dev', ['gfc'], function(){
     return conf.jade()
       .pipe(gulp.dest(conf.paths.tmp + '/serve/app/'));
 
 });
 
-gulp.task('watch', ['gfc', 'inject', 'jade-dev'], function ()
+gulp.task('watch', ['inject', 'jade-dev'], function ()
 {
     gulp.watch([path.join(conf.paths.src, '/*.html'), 'bower.json'], ['inject-reload']);
 

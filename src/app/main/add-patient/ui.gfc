@@ -1,0 +1,13 @@
+module.exports =  病患:
+  type: 'grids-fuse'
+  # data: require './data-schema.gfc'
+  data: 病患: require 'gfc-schema-hcp-basic' .病患
+
+  columns-in-a-row: 12
+  layout: 
+    * "档案号(6)   ,  姓名(3)  ,  性别(3)           " 
+    * "联系电话(6) ,  年龄(3)   ,  出生日期(3)       " 
+    * "身份证号(6) ,  出生地(3) ,  民族(3)           " 
+    * "住院号(6)   ,  影像号(6)                     " 
+    * "婚姻状况(3) ,  身高(3)   ,  体重(3)  ,  血型(3)" 
+    * "联系地址(12)                                 "

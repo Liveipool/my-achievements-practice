@@ -175,7 +175,11 @@
         // Base Url
         api.baseUrl = 'app/data/';
 
-        api.testBoxes = $resource(api.baseUrl + 'test/boxes.json');
+        console.log("API get services defined by GFCPage: ", GFCPage.services);
+        for (name in GFCPage.services) {
+            api[name] = $resource(api.baseUrl + GFCPage.services[name].data);
+        }
+
 
         api.auth = {
          isRegistedUser: function(params){
