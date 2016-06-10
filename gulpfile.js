@@ -8,6 +8,14 @@
 
 var gulp = require('gulp');
 var wrench = require('wrench');
+var conf = require('./gulp/conf');
+var gfcTask = require('gfc-fuse-render') 
+
+/**
+ *  Add GFC tasks wrapped a task  'gfc'
+ */
+gfcTask(gulp, conf.paths);
+
 
 /**
  *  This will load all js or coffee files in the gulp directory

@@ -17,7 +17,7 @@ gulp.task('jade-dev', function(){
 
 });
 
-gulp.task('watch', ['inject', 'jade-dev'], function ()
+gulp.task('watch', ['gfc', 'inject', 'jade-dev'], function ()
 {
     gulp.watch([path.join(conf.paths.src, '/*.html'), 'bower.json'], ['inject-reload']);
 
