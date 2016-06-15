@@ -7,5 +7,5 @@
      */
     angular
         // .module('fuse', ['app.add-patient', 'app.core', 'app.navigation', 'app.toolbar', 'app.quick-panel',  'app.test', 'app.auth.login', 'app.auth.lock']);
-        .module('fuse', GFCPage.modules);
+        .module('fuse', GFC.modules);
 })();

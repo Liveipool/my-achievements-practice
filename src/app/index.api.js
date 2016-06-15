@@ -175,9 +175,10 @@
         // Base Url
         api.baseUrl = 'app/data/';
 
-        console.log("API get services defined by GFCPage: ", GFCPage.services);
-        for (name in GFCPage.services) {
-            api[name] = $resource(api.baseUrl + GFCPage.services[name].data);
+        console.log("API get services defined by GFC: ", GFC.services);
+        for (name in GFC.services) {
+            var service = GFC.services[name]
+            api[name] = $resource(api.baseUrl + service.data, service.query);
         }
 
 
