@@ -1,11 +1,11 @@
 module.exports =  病患:
   type: 'grid-form'
-  # data: require './data-schema.gfc'
-  data: 病患: require 'gfc-schema-hcp-basic' .病患
+  data: require '../../../../../../bin/index' .广州.中山大学附属第六医院.病患
 
   columns-in-a-row: 12
   rows: 
     * "档案号(6)   ,  姓名(3)  ,  性别(3)           " 
+    * "初诊时间(6) ,  最后诊疗时间(3) ,  诊疗次数(3)   " 
     * "联系电话(6) ,  年龄(3)   ,  出生日期(3)       " 
     * "身份证号(6) ,  出生地(3) ,  民族(3)           " 
     * "住院号(6)   ,  影像号(6)                     " 

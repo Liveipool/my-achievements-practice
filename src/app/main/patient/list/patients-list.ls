@@ -2,17 +2,11 @@
 GFC.Widget.create 'list', { 
   module:
     name: 'app.patients', 
+    schema: "广州.中山大学附属第六医院.病患"
     template-url: 'app/main/patient/list/ui.gfc.html'
-    click-row: (state, data)-> 
-      console.log "click-row form"
-      state.go 'app.patient', id: data[0]
+    item-state: 'app.patient'
 
   menu:
-    title: '病患列表' 
-    image: '/assets/images/menu/test-plan.svg'
-    group: 'example'
-
-  service:
-    name: 'patients'
-    data: 'patient/patients.json'
+    title : '病患列表' 
+    image : '/assets/images/menu/test-plan.svg'
 }
