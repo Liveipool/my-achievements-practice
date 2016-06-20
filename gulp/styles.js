@@ -17,7 +17,7 @@ gulp.task('styles-reload', ['styles'], function ()
         .pipe(browserSync.stream());
 });
 
-gulp.task('styles', function ()
+gulp.task('styles', ['gfc'], function ()
 {
     return buildStyles();
 });
