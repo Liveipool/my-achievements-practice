@@ -175,13 +175,13 @@
 
         // Base Url
         api.baseUrl = 'app/data/';
-        api.gfcUrl = 'app/gfc/data/'
+        // api.gfcUrl = 'app/gfc/data/'
 
         // console.log("API get services defined by GFC: ", GFC.services);
-        for (name in GFC.services) {
-            var service = GFC.services[name]
-            api[name] = $resource(api.gfcUrl + service.data, service.query);
-        }
+        // for (name in GFC.services) {
+        //     var service = GFC.services[name]
+        //     api[name] = $resource(api.gfcUrl + service.data, service.query);
+        // }
 
 
         api.auth = {

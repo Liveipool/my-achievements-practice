@@ -2,8 +2,8 @@
   #login-form-wrapper(layout='column', layout-align='center center')
     #login-form.md-whiteframe-8dp
       .logo.md-accent-bg
-        span F
-      .title(translate='LOGIN.TITLE' ng-hide='vm.invalidUser') Log in to your account
+        span MA
+      .title(translate='LOGIN.TITLE' ng-hide='vm.invalidUser') 请登录您的账号
       .title.is-invalid(translate='LOGIN.INVALID' ng-show='vm.invalidUser') Username or password error!
 
         div(ng-messages='loginForm.password.$error', ng-show='loginForm.password.$touched', role='alert')
@@ -26,27 +26,10 @@
         
         .remember-forgot-password(layout='row', layout-xs='column', layout-align='space-between center')
           md-checkbox.remember-me(ng-model='data.cb1', aria-label='Remember Me')
-            span(translate='LOGIN.REMEMBER_ME') Remember Me
-          a.forgot-password.md-accent-color(ui-sref='app.pages_auth_forgot-password', translate='LOGIN.FORGOT_PASSWORD') Forgot Password?
+            span(translate='LOGIN.REMEMBER_ME') 记住密码
+          a.forgot-password.md-accent-color(ui-sref='app.pages_auth_forgot-password', translate='LOGIN.FORGOT_PASSWORD') 忘记密码?
         
         md-button.md-raised.md-accent(type='submit', aria-label='LOG IN', ng-disabled='loginForm.$invalid || loginForm.$pristine', translate='LOGIN.LOG_IN', translate-attr-aria-label='LOGIN.LOG_IN' ng-click='vm.login()')
-          | LOG IN
+          | 登录
       
-      .separator
-        span.text(translate='LOGIN.OR') OR
       
-      md-button.md-raised.google
-        div(layout='row', layout-align='center center')
-          span
-            md-icon.s16(md-font-icon='icon-google-plus')
-            span(translate='LOGIN.WITH_GOOGLE') Log in with Google
-      
-      md-button.md-raised.facebook
-        div(layout='row', layout-align='center center')
-          span
-            md-icon.s16(md-font-icon='icon-facebook')
-            span(translate='LOGIN.WITH_FACEBOOK') Log in with Facebook
-      
-      .register(layout='row', layout-sm='column', layout-align='center center')
-        span.text(translate='LOGIN.DONT_HAVE_ACCOUNT') Don't have an account?
-        a.link(ui-sref='app.auth.register', translate='LOGIN.CREATE_ACCOUNT') Create an account

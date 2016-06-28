@@ -1,7 +1,5 @@
 'use strict'
 
-
-
 angular.module 'fuse' 
 
 .config navigations = ($state-provider, $translate-partial-loader-provider, ms-navigation-service-provider)!->
@@ -9,13 +7,12 @@ angular.module 'fuse'
   nav = ms-navigation-service-provider  
 
 
+  # --------- 菜单 ----------- #    
+  nav.save-item 'user',  {title : "用户"   , group: true,   weight   : 2,  class: 'user' }
 
+  nav.save-item 'homework', {title : "作业" , group: true, weight: 1 }
 
-  # --------- 菜单 ----------- #
-  nav.save-item 'example',          {title : '示例'     , group : true,  weight: 1 } # 分组用来容纳示例
-    
-
-  nav.save-item 'user',  {title : "用户"   , group: true,   weight   : 2,  class: 'user' } 
+  nav.save-item 'homework.dashboard', { title: "作业情况", state: 'app.homework.dashboard', weight: 1, image: '/assets/images/menu/company.svg' }
 
 .controller 'MainController', ($scope, $root-scope, ms-navigation-service, $state)!->
   'ngInject'
