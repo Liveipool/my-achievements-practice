@@ -13,6 +13,7 @@ angular.module('app.patients', []).config(function($stateProvider) {
         controllerAs: 'pa',
         controller: function(data, $scope) {
           this.data = data;
+        console.log(data.data[0]);
         }
       }
     }

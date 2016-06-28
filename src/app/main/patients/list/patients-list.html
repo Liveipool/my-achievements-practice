@@ -1,0 +1,68 @@
+<div id="simple-table" class="page-layout simple fullwidth doc-page element-doc-page">
+
+    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+        <div layout="column" layout-align="center start">
+            <div class="title">患者情况一览表</div>
+        </div>
+
+    </div>
+
+
+    <div class="content">
+        <div class="white-bg md-whiteframe-4dp">
+            <table class="dataTable row-border hover" datatable="ng">
+                <thead>
+                    <tr>
+                        <th class="secondary-text">
+                            <div class="table-header">
+                                <span class="column-title">姓名</span>
+                            </div>
+                        </th>
+                        <th class="secondary-text">
+                            <div class="table-header">
+                                <span class="column-title">性别</span>
+                            </div>
+                        </th>
+                        <th class="secondary-text">
+                            <div class="table-header">
+                                <span class="column-title">年龄</span>
+                            </div>
+                        </th>
+                        <th class="secondary-text">
+                            <div class="table-header">
+                                <span class="column-title">城市/区</span>
+                            </div>
+                        </th>
+                        <th class="secondary-text">
+                            <div class="table-header">
+                                <span class="column-title">初诊时间</span>
+                            </div>
+                        </th>
+                        <th class="secondary-text">
+                            <div class="table-header">
+                                <span class="column-title">最后诊疗时间</span>
+                            </div>
+                        </th>
+                        <th class="secondary-text">
+                            <div class="table-header">
+                                <span class="column-title">诊疗次数</span>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="detail in pa.data.data">
+                        <td>{{detail['姓名']}}</td>
+                        <td>{{detail['性别']}}</td>
+                        <td>{{detail['年龄']}}</td>
+                        <td>{{detail['出生地']}}</td>
+                        <td>{{detail['初诊时间']}}</td>
+                        <td>{{detail['最后诊疗时间']}}</td>
+                        <td>{{detail['诊疗次数']}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
