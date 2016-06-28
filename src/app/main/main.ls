@@ -1,18 +1,28 @@
 'use strict'
 
+
+angular.module 'app.patients' .config ($state-provider)-> $state-provider.state 'app.patients', {abstract: true}
+
 angular.module 'fuse' 
 
 .config navigations = ($state-provider, $translate-partial-loader-provider, ms-navigation-service-provider)!->
   'ngInject'
   nav = ms-navigation-service-provider  
 
+  
 
   # --------- 菜单 ----------- #    
   nav.save-item 'user',  {title : "用户"   , group: true,   weight   : 2,  class: 'user' }
 
-  nav.save-item 'homework', {title : "作业" , group: true, weight: 1 }
+  nav.save-item 'treatment', {title: "诊疗工作", group: true, weight: 1 }
 
-  nav.save-item 'homework.dashboard', { title: "作业情况", state: 'app.homework.dashboard', weight: 1, image: '/assets/images/menu/company.svg' }
+  nav.save-item 'treatment.information', {title: "诊疗情况概览", weight: 1, icon: 'icon-chart-line' }
+
+  nav.save-item 'treatment.patients', {title: "病患诊疗", state: 'app.patients.list', weight: 1, icon: 'icon-account-multiple' }
+
+  nav.save-item 'treatment.data-analysis', {title: "数据分析", weight: 1, icon: 'icon-sigma' }
+
+  # nav.save-item 'homework.dashboard', { title: "作业情况", state: 'app.homework.dashboard', weight: 1, image: '/assets/images/menu/company.svg' }
 
 .controller 'MainController', ($scope, $root-scope, ms-navigation-service, $state)!->
   'ngInject'

@@ -1,0 +1,427 @@
+{
+  "id": "0003",
+  "name": "侯月啟", 
+  "gender": "男", 
+  "birthDate": "1968-01-02",
+  "age": 48,
+  "adNum": "0003",
+  "videoNum": "0003",
+  "IDNum": "0003",
+  "birthplace": "广州",
+  "nationality": "汉",
+  "bloodType": "A",
+  "maritalStatus": "未婚",
+  "height": 188,
+  "weight": 65,
+  "address": "广州大学城",
+  "phone": "13313331333",
+
+  "acography": {
+
+    "xiaorongs":[
+      {
+        "danganNum": "01",
+        "shoushuNum": "01",
+        "position": "肝",
+        "ways": "影像检查",
+        "bingli": "肝部肿瘤",
+        "mianyi": "无"
+      },
+      {
+        "danganNum": "05",
+        "shoushuNum": "05",
+        "position": "肝",
+        "ways": "化验",
+        "bingli": "肝部肿瘤",
+        "mianyi": "无"
+      }
+    ],
+
+    "hualiaos":[
+      {
+        "danganNum": "02",
+        "shoushuNum": "02",
+        "date": "2015-05-06",
+        "medicine": "青霉素",
+        "liaochengNum": 4,
+        "effect": "良好",
+        "bingfa": "无",
+        "other": "无"
+      },
+      {
+        "danganNum": "06",
+        "shoushuNum": "06",
+        "date": "2015-06-06",
+        "medicine": "青霉素",
+        "liaochengNum": 5,
+        "effect": "良好",
+        "bingfa": "无",
+        "other": "无"
+      }
+    ],
+
+    "fangliaos":[
+      {
+        "danganNum": "03",
+        "shoushuNum": "03",
+        "date": "2015-10-06",
+        "ways": "穿刺",
+        "position": "肝",
+        "amount": "5ml",
+        "bingfa": "无",
+        "other": "无"
+      },
+      {
+        "danganNum": "07",
+        "shoushuNum": "07",
+        "date": "2015-11-06",
+        "ways": "穿刺",
+        "position": "肝",
+        "amount": "5ml",
+        "bingfa": "无",
+        "other": "无"
+      }
+    ],
+
+    "waikes":[
+      {
+        "danganNum": "04",
+        "shoushuNum": "04",
+        "date": "2016-01-06",
+        "ways": "切割",
+        "position": "肝",
+        "state": "良好",
+        "bingfa": "无",
+        "other": "无"
+      },
+      {
+        "danganNum": "08",
+        "shoushuNum": "08",
+        "date": "2016-03-06",
+        "ways": "切割",
+        "position": "肝",
+        "state": "良好",
+        "bingfa": "无",
+        "other": "无"
+      }
+    ]
+
+  },
+
+
+  "inspectionRecord": {
+    "chaoshengs":[
+      {
+        "danganNum": "11",
+        "chaoshengNum": "11",
+        "zaoying": "是",
+        "zhuyuanNum": "A27",
+        "bingchuangNum": "03",
+        "position": "肝",
+        "date": "2015-08-01",
+        "performance": "肝部有异物",
+        "opinion": "考虑肝部肿瘤"
+      },
+      {
+        "danganNum": "12",
+        "chaoshengNum": "12",
+        "zaoying": "否",
+        "zhuyuanNum": "A27",
+        "bingchuangNum": "03",
+        "position": "肝",
+        "date": "2015-09-01",
+        "performance": "肝部有异物",
+        "opinion": "考虑肝部肿瘤"
+      }
+    ],
+    "CTs": [
+      {
+        "danganNum": "13",
+        "CTNum": "13",
+        "zengqiang": "是",
+        "zhuyuanNum": "A27",
+        "bingchuangNum": "03",
+        "position": "肝",
+        "date": "2015-08-01",
+        "performance": "肝部有异物",
+        "opinion": "考虑肝部肿瘤"
+      },
+      {
+        "danganNum": "14",
+        "CTNum": "14",
+        "zengqiang": "否",
+        "zhuyuanNum": "A27",
+        "bingchuangNum": "03",
+        "position": "肝",
+        "date": "2015-09-01",
+        "performance": "肝部有异物",
+        "opinion": "考虑肝部肿瘤"
+      }
+    ],
+    "MRIs": [
+      {
+        "danganNum": "15",
+        "MRINum": "15",
+        "zhuyuanNum": "A27",
+        "bingchuangNum": "03",
+        "position": "肝",
+        "date": "2015-08-01",
+        "other": "无",
+        "performance": "肝部有异物",
+        "opinion": "考虑肝部肿瘤"
+      },
+      {
+        "danganNum": "16",
+        "MRINum": "16",
+        "zhuyuanNum": "A27",
+        "bingchuangNum": "03",
+        "position": "肝",
+        "date": "2015-09-01",
+        "other": "无",
+        "performance": "肝部有异物",
+        "opinion": "考虑肝部肿瘤"
+      }
+    ],
+    "PETCTs": [
+      {
+        "danganNum": "15",
+        "CTNum": "15",
+        "zhuyuanNum": "A27",
+        "bingchuangNum": "03",
+        "position": "肝",
+        "date": "2015-08-01",
+        "other": "无",
+        "performance": "肝部有异物",
+        "opinion": "考虑肝部肿瘤"
+      },
+      {
+        "danganNum": "16",
+        "CTNum": "16",
+        "zhuyuanNum": "A27",
+        "bingchuangNum": "03",
+        "position": "肝",
+        "date": "2015-09-01",
+        "other": "无",
+        "performance": "肝部有异物",
+        "opinion": "考虑肝部肿瘤"
+      }
+    ],
+    "binglis": [
+      {
+        "danganNum": "15",
+        "bingliNum": "15",
+        "biaobenNum": "A27",
+        "bingchuangNum": "03",
+        "type": "肝",
+        "date": "2015-08-01",
+        "zhenduan": "肝部肿瘤",
+        "performance": "肝部有异物",
+        "opinion": "考虑肝部肿瘤"
+      },
+      {
+        "danganNum": "16",
+        "bingliNum": "16",
+        "biaobenNum": "A27",
+        "bingchuangNum": "03",
+        "type": "肝",
+        "date": "2015-09-01",
+        "zhenduan": "考虑肝部肿瘤",
+        "performance": "肝部有异物",
+        "opinion": "考虑肝部肿瘤"
+      }
+    ],
+    "quanxues": [
+      {
+        "danganNum": "15",
+        "bingliNum": "15",
+        "biaobenNum": "A27",
+        "bingchuangNum": "03",
+        "type": "全血",
+        "date": "2015-08-01",
+        "zhenduan": "白细胞数量减少"
+      },
+      {
+        "danganNum": "16",
+        "bingliNum": "16",
+        "biaobenNum": "A27",
+        "bingchuangNum": "03",
+        "type": "全血",
+        "date": "2015-09-01",
+        "zhenduan": "血小板低于正常值"
+      }
+    ],
+    "zhonglius": [
+      {
+        "danganNum": "15",
+        "bingliNum": "15",
+        "biaobenNum": "A27",
+        "bingchuangNum": "03",
+        "type": "肝",
+        "date": "2015-08-01",
+        "zhenduan": "考虑肝部肿瘤"
+      },
+      {
+        "danganNum": "16",
+        "bingliNum": "16",
+        "biaobenNum": "A27",
+        "bingchuangNum": "03",
+        "type": "肝",
+        "date": "2015-09-01",
+        "zhenduan": "考虑肝部肿瘤"
+      }
+    ],
+
+    "shenghuas": [
+      {
+        "danganNum": "15",
+        "bingliNum": "15",
+        "biaobenNum": "A27",
+        "bingchuangNum": "03",
+        "type": "肝",
+        "date": "2015-08-01",
+        "zhenduan": "考虑肝部肿瘤"
+      },
+      {
+        "danganNum": "16",
+        "bingliNum": "16",
+        "biaobenNum": "A27",
+        "bingchuangNum": "03",
+        "type": "肝",
+        "date": "2015-09-01",
+        "zhenduan": "考虑肝部肿瘤"
+      }
+    ],
+    "yigans": [
+      {
+        "danganNum": "15",
+        "bingliNum": "15",
+        "biaobenNum": "A27",
+        "bingchuangNum": "03",
+        "type": "肝",
+        "date": "2015-08-01",
+        "zhenduan": "考虑肝部肿瘤"
+      },
+      {
+        "danganNum": "16",
+        "bingliNum": "16",
+        "biaobenNum": "A27",
+        "bingchuangNum": "03",
+        "type": "肝",
+        "date": "2015-09-01",
+        "zhenduan": "考虑肝部肿瘤"
+      }
+    ],
+    "yiganDNAs": [
+      {
+        "danganNum": "15",
+        "bingliNum": "15",
+        "biaobenNum": "A27",
+        "bingchuangNum": "03",
+        "type": "肝",
+        "date": "2015-08-01",
+        "zhenduan": "考虑肝部肿瘤"
+      },
+      {
+        "danganNum": "16",
+        "bingliNum": "16",
+        "biaobenNum": "A27",
+        "bingchuangNum": "03",
+        "type": "肝",
+        "date": "2015-09-01",
+        "zhenduan": "考虑肝部肿瘤"
+      }
+    ],
+    "pees": [
+      {
+        "danganNum": "15",
+        "bingliNum": "15",
+        "biaobenNum": "A27",
+        "bingchuangNum": "03",
+        "type": "肝",
+        "date": "2015-08-01",
+        "zhenduan": "考虑肝部肿瘤"
+      },
+      {
+        "danganNum": "16",
+        "bingliNum": "16",
+        "biaobenNum": "A27",
+        "bingchuangNum": "03",
+        "type": "肝",
+        "date": "2015-09-01",
+        "zhenduan": "考虑肝部肿瘤"
+      }
+    ],
+    "ningxues": [
+      {
+        "danganNum": "15",
+        "bingliNum": "15",
+        "biaobenNum": "A27",
+        "bingchuangNum": "03",
+        "type": "肝",
+        "date": "2015-08-01",
+        "zhenduan": "考虑肝部肿瘤"
+      },
+      {
+        "danganNum": "16",
+        "bingliNum": "16",
+        "biaobenNum": "A27",
+        "bingchuangNum": "03",
+        "type": "肝",
+        "date": "2015-09-01",
+        "zhenduan": "考虑肝部肿瘤"
+      }
+    ],
+    "DSAs": [
+      {
+        "danganNum": "15",
+        "yingxiangNum": "15",
+        "zhuyuanNum": "A27",
+        "bingchuangNum": "03",
+        "position": "肝",
+        "date": "2015-08-01",
+        "other": "无",
+        "performance": "肝部有异物",
+        "opinion": "考虑肝部肿瘤"
+      },
+      {
+        "danganNum": "16",
+        "yingxiangNum": "16",
+        "zhuyuanNum": "A27",
+        "bingchuangNum": "03",
+        "position": "肝",
+        "date": "2015-09-01",
+        "other": "无",
+        "performance": "肝部有异物",
+        "opinion": "考虑肝部肿瘤"
+      }
+    ]
+
+  },
+
+
+
+
+
+
+  "followups":[
+    {
+      "danganNum": "09",
+      "date": "2015-01-01",
+      "lifeStandard": "1-100",
+      "lifeScore": 70,
+      "acheStandard": "A-D",
+      "acheScore": "D"
+    },
+    {
+      "danganNum": "10",
+      "date": "2015-03-01",
+      "lifeStandard": "1-100",
+      "lifeScore": 80,
+      "acheStandard": "A-D",
+      "acheScore": "C"
+    }
+  ]
+
+}
+
+

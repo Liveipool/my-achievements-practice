@@ -8,5 +8,5 @@
     angular
         // .module('fuse', ['app.add-patient', 'app.core', 'app.navigation', 'app.toolbar', 'app.quick-panel',  'app.test', 'app.auth.login', 'app.auth.lock']);
         // .module('fuse', GFC.modules);
-        .module('fuse', ['app.core', 'app.navigation', 'app.toolbar', 'app.quick-panel', 'app.homework.dashboard', 'app.auth.login', 'app.auth.lock']);
+        .module('fuse', ['app.core', 'app.navigation', 'app.toolbar', 'app.quick-panel', 'app.patients', 'app.auth.login', 'app.auth.lock']);
 })();

@@ -175,6 +175,9 @@
 
         // Base Url
         api.baseUrl = 'app/data/';
+
+        api.patientsList = $resource(api.baseUrl + 'patient/patients.json');
+        api.patientsDetail = $resource(api.baseUrl + 'patient/8kvgvqa8nxwssrntmgikqjwn.json');
         // api.gfcUrl = 'app/gfc/data/'
 
         // console.log("API get services defined by GFC: ", GFC.services);
