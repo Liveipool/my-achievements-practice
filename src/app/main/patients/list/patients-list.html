@@ -10,7 +10,22 @@
 
     <div class="content">
         <div class="white-bg md-whiteframe-4dp">
-            <table class="dataTable row-border hover" datatable="ng">
+
+          <div layout="row" class="two-search-bar" layout="row">
+            <md-input-container layout="30" flex>
+              <label class="search-input-style">搜索姓名</label>
+              <input>
+            </md-input-container>
+            <md-input-container layout="30" flex>
+              <label class="search-input-style">搜索时间</label>
+              <input>
+            </md-input-container>
+            <md-button class="md-accent md-raised md-hue-1">
+              <div class="md-tianjiabinghuan">添加病患</div>
+            </md-button>
+          </div>
+
+            <table class="dataTable row-border hover" datatable="ng" dt-options="pl.dtOptions">
                 <thead>
                     <tr>
                         <th class="secondary-text">
@@ -51,7 +66,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="detail in pa.data.data">
+                    <tr ng-repeat="detail in pl.data.data" ui-sref="app.patients.detail({id: detail.id, name: detail['姓名']})">
                         <td>{{detail['姓名']}}</td>
                         <td>{{detail['性别']}}</td>
                         <td>{{detail['年龄']}}</td>

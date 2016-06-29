@@ -1,0 +1,399 @@
+<div id="simple-table" class="page-layout simple fullwidth doc-page element-doc-page">
+
+  <!-- HEADER -->
+  <div class="header md-accent-bg" layout="row" layout-align="space-between">
+    <div layout="column" layout-align="center start">
+      <div class="breadcrumb" layout="row" layout-align="start center">
+        <span class="parent">患者一览表</span>
+        <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+      </div>
+      <div class="title">{{pd.name}}患者详情</div>
+    </div>
+  </div>
+  <!-- / HEADER -->
+
+  <md-content class="patients-detail-content-layout">
+    <div class="white-bg md-whiteframe-4dp">
+      <md-tabs md-dynamic-height>
+          <md-tab label="基本信息" class="patients-detail-tabs-layout">
+	        <div class="simple-table-container md-whiteframe-4dp">
+	            <div class="table-title">
+	                Employees
+	            </div>
+
+	            <table class="simple" ms-responsive-table>
+	                <thead>
+	                    <tr>
+	                        <th>档案号</th>
+	                        <th>手术号</th>
+	                        <th>原发位置</th>
+	                        <th class="text-right">Age</th>
+	                        <th class="text-right">Start Date</th>
+	                        <th class="text-right">Salary</th>
+	                    </tr>
+	                </thead>
+
+	                <tfoot>
+	                    <tr>
+	                        <td></td>
+	                    </tr>
+	                </tfoot>
+
+	                <tbody>
+	                    <tr>
+	                        <td class="name">1</td>
+	                        <td class="position">1</td>
+	                        <td class="office">1</td>
+	                        <td class="age text-right">1</td>
+	                        <td class="start-date text-right">1</td>
+	                        <td class="salary text-right">1</td>
+	                    </tr>
+	                </tbody>
+	            </table>
+	        </div>
+          </md-tab>
+          <md-tab label="治疗记录" class="patients-detail-tabs-layout">
+	        <div class="simple-table-container md-whiteframe-4dp">
+	          <div class="table-title">
+	            <md-tabs md-dynamic-height>
+                  <md-tab label="消融治疗">
+		            <table class="simple" ms-responsive-table>
+		                <thead>
+		                    <tr>
+		                        <th>档案号</th>
+		                        <th>手术号</th>
+		                        <th>原发位置</th>
+		                        <th>确诊方式</th>
+		                        <th>病理诊断</th>
+		                        <th>免疫组化信息</th>
+		                    </tr>
+		                </thead>
+
+		                <tfoot>
+		                    <tr>
+		                        <td></td>
+		                    </tr>
+		                </tfoot>
+
+		                <tbody>
+		                    <tr ng-repeat="xiaorong in pd.detail.acography.xiaorongs">
+		                        <td>{{xiaorong.danganNum}}</td>
+		                        <td>{{xiaorong.shoushuNum}}</td>
+		                        <td>{{xiaorong.position}}</td>
+		                        <td>{{xiaorong.ways}}</td>
+		                        <td>{{xiaorong.bingli}}</td>
+		                        <td>{{xiaorong.mianyi}}</td>
+		                    </tr>
+		                </tbody>
+		            </table>
+	              </md-tab>
+	              <md-tab label="化疗记录">
+		            <table class="simple" ms-responsive-table>
+		                <thead>
+		                    <tr>
+		                        <th>档案号</th>
+		                        <th>手术号</th>
+		                        <th>发病日期</th>
+		                        <th>药品</th>
+		                        <th>疗程数</th>
+		                        <th>效果</th>
+		                        <th>病发</th>
+		                        <th>其他</th>
+		                    </tr>
+		                </thead>
+
+		                <tfoot>
+		                    <tr>
+		                        <td></td>
+		                    </tr>
+		                </tfoot>
+
+		                <tbody>
+		                    <tr ng-repeat="hualiao in pd.detail.acography.hualiaos">
+		                        <td>{{hualiao.danganNum}}</td>
+		                        <td>{{hualiao.shoushuNum}}</td>
+		                        <td>{{hualiao.date}}</td>
+		                        <td>{{hualiao.medicine}}</td>
+		                        <td>{{hualiao.liaochengNum}}</td>
+		                        <td>{{hualiao.effect}}</td>
+		                        <td>{{hualiao.bingfa}}</td>
+		                        <td>{{hualiao.other}}</td>
+		                    </tr>
+		                </tbody>
+		            </table>
+	              </md-tab>
+	              <md-tab label="放疗记录">
+  	                <table class="simple" ms-responsive-table>
+		                <thead>
+		                    <tr>
+		                        <th>档案号</th>
+		                        <th>手术号</th>
+		                        <th>日期</th>
+		                        <th>方法</th>
+		                        <th>位置</th>
+		                        <th>剂量</th>
+		                        <th>病发</th>
+		                        <th>其他</th>
+		                    </tr>
+		                </thead>
+
+		                <tfoot>
+		                    <tr>
+		                        <td></td>
+		                    </tr>
+		                </tfoot>
+
+		                <tbody>
+		                    <tr ng-repeat="fangliao in pd.detail.acography.fangliaos">
+		                        <td>{{fangliao.danganNum}}</td>
+		                        <td>{{fangliao.shoushuNum}}</td>
+		                        <td>{{fangliao.date}}</td>
+		                        <td>{{fangliao.ways}}</td>
+		                        <td>{{fangliao.position}}</td>
+		                        <td>{{fangliao.amount}}</td>
+		                        <td>{{fangliao.bingfa}}</td>
+		                        <td>{{fangliao.other}}</td>
+		                    </tr>
+		                </tbody>
+		            </table>
+	              </md-tab>
+	              <md-tab label="外科手术">
+		            <table class="simple" ms-responsive-table>
+		                <thead>
+		                    <tr>
+		                        <th>档案号</th>
+		                        <th>手术号</th>
+		                        <th>日期</th>
+		                        <th>方法</th>
+		                        <th>位置</th>
+		                        <th>状态</th>
+		                        <th>病发</th>
+		                        <th>其他</th>
+		                    </tr>
+		                </thead>
+
+		                <tfoot>
+		                    <tr>
+		                        <td></td>
+		                    </tr>
+		                </tfoot>
+
+		                <tbody>
+		                    <tr ng-repeat="waike in pd.detail.acography.waikes">
+		                        <td>{{waike.danganNum}}</td>
+		                        <td>{{waike.shoushuNum}}</td>
+		                        <td>{{waike.date}}</td>
+		                        <td>{{waike.ways}}</td>
+		                        <td>{{waike.position}}</td>
+		                        <td>{{waike.state}}</td>
+		                        <td>{{waike.bingfa}}</td>
+		                        <td>{{waike.other}}</td>
+		                    </tr>
+		                </tbody>
+		            </table>
+	              </md-tab>
+	            </md-tabs>
+	          </div>
+	        </div>
+          </md-tab>
+          <md-tab label="检查记录" class="patients-detail-tabs-layout">
+	        <div class="simple-table-container md-whiteframe-4dp">
+	          <div class="table-title">
+	            <md-tabs md-dynamic-height>
+                  <md-tab label="消融治疗">
+		            <table class="simple" ms-responsive-table>
+		                <thead>
+		                    <tr>
+		                        <th>档案号</th>
+		                        <th>手术号</th>
+		                        <th>原发位置</th>
+		                        <th class="text-right">确诊方式</th>
+		                        <th class="text-right">病理诊断</th>
+		                        <th class="text-right">免疫组化信息</th>
+		                    </tr>
+		                </thead>
+
+		                <tfoot>
+		                    <tr>
+		                        <td></td>
+		                    </tr>
+		                </tfoot>
+
+		                <tbody>
+		                    <tr ng-repeat="xiaorong in pd.detail.acography.xiaorongs">
+		                        <td>{{xiaorong.danganNum}}</td>
+		                        <td>{{xiaorong.shoushuNum}}</td>
+		                        <td>{{xiaorong.position}}</td>
+		                        <td class="text-right">{{xiaorong.ways}}</td>
+		                        <td class="text-right">{{xiaorong.bingli}}</td>
+		                        <td class="text-right">{{xiaorong.mianyi}}</td>
+		                    </tr>
+		                </tbody>
+		            </table>
+	              </md-tab>
+	              <md-tab label="化疗记录">
+		            <table class="simple" ms-responsive-table>
+		                <thead>
+		                    <tr>
+		                        <th>档案号</th>
+		                        <th>手术号</th>
+		                        <th>发病日期</th>
+		                        <th>药品</th>
+		                        <th class="text-right">疗程数</th>
+		                        <th class="text-right">效果</th>
+		                        <th class="text-right">病发</th>
+		                        <th class="text-right">其他</th>
+		                    </tr>
+		                </thead>
+
+		                <tfoot>
+		                    <tr>
+		                        <td></td>
+		                    </tr>
+		                </tfoot>
+
+		                <tbody>
+		                    <tr ng-repeat="hualiao in pd.detail.acography.hualiaos">
+		                        <td>{{hualiao.danganNum}}</td>
+		                        <td>{{hualiao.shoushuNum}}</td>
+		                        <td>{{hualiao.date}}</td>
+		                        <td>{{hualiao.medicine}}</td>
+		                        <td class="text-right">{{hualiao.liaochengNum}}</td>
+		                        <td class="text-right">{{hualiao.effect}}</td>
+		                        <td class="text-right">{{hualiao.bingfa}}</td>
+		                        <td class="text-right">{{hualiao.other}}</td>
+		                    </tr>
+		                </tbody>
+		            </table>
+	              </md-tab>
+	              <md-tab label="放疗记录">
+  	                <table class="simple" ms-responsive-table>
+		                <thead>
+		                    <tr>
+		                        <th>档案号</th>
+		                        <th>手术号</th>
+		                        <th>日期</th>
+		                        <th>方法</th>
+		                        <th class="text-right">位置</th>
+		                        <th class="text-right">剂量</th>
+		                        <th class="text-right">病发</th>
+		                        <th class="text-right">其他</th>
+		                    </tr>
+		                </thead>
+
+		                <tfoot>
+		                    <tr>
+		                        <td></td>
+		                    </tr>
+		                </tfoot>
+
+		                <tbody>
+		                    <tr ng-repeat="fangliao in pd.detail.acography.fangliaos">
+		                        <td>{{fangliao.danganNum}}</td>
+		                        <td>{{fangliao.shoushuNum}}</td>
+		                        <td>{{fangliao.date}}</td>
+		                        <td>{{fangliao.ways}}</td>
+		                        <td class="text-right">{{fangliao.position}}</td>
+		                        <td class="text-right">{{fangliao.amount}}</td>
+		                        <td class="text-right">{{fangliao.bingfa}}</td>
+		                        <td class="text-right">{{fangliao.other}}</td>
+		                    </tr>
+		                </tbody>
+		            </table>
+	              </md-tab>
+	              <md-tab label="外科手术">
+		            <table class="simple" ms-responsive-table>
+		                <thead>
+		                    <tr>
+		                        <th>档案号</th>
+		                        <th>手术号</th>
+		                        <th>日期</th>
+		                        <th>方法</th>
+		                        <th class="text-right">位置</th>
+		                        <th class="text-right">状态</th>
+		                        <th class="text-right">病发</th>
+		                        <th class="text-right">其他</th>
+		                    </tr>
+		                </thead>
+
+		                <tfoot>
+		                    <tr>
+		                        <td></td>
+		                    </tr>
+		                </tfoot>
+
+		                <tbody>
+		                    <tr ng-repeat="waike in pd.detail.acography.waikes">
+		                        <td>{{waike.danganNum}}</td>
+		                        <td>{{waike.shoushuNum}}</td>
+		                        <td>{{waike.date}}</td>
+		                        <td>{{waike.ways}}</td>
+		                        <td class="text-right">{{waike.position}}</td>
+		                        <td class="text-right">{{waike.state}}</td>
+		                        <td class="text-right">{{waike.bingfa}}</td>
+		                        <td class="text-right">{{waike.other}}</td>
+		                    </tr>
+		                </tbody>
+		            </table>
+	              </md-tab>
+	            </md-tabs>
+	          </div>
+	        </div>
+          </md-tab>
+          <md-tab label="随访记录" class="patients-detail-tabs-layout">
+	        <div class="simple-table-container md-whiteframe-4dp">
+	          <div class="table-title">
+	            <md-tabs md-dynamic-height>
+                  <md-tab label="随访记录">
+		            <table class="simple" ms-responsive-table>
+		                <thead>
+		                    <tr>
+		                        <th>档案号</th>
+		                        <th>随访日期</th>
+		                        <th>生活标准状态</th>
+		                        <th>生活标准评分</th>
+		                        <th>疼痛级别标准</th>
+		                        <th>疼痛级别评分</th>
+		                    </tr>
+		                </thead>
+
+		                <tfoot>
+		                    <tr>
+		                        <td></td>
+		                    </tr>
+		                </tfoot>
+
+		                <tbody>
+		                    <tr ng-repeat="followup in pd.detail.followups">
+		                        <td>{{followup.danganNum}}</td>
+		                        <td>{{followup.date}}</td>
+		                        <td>{{followup.lifeStandard}}</td>
+		                        <td>{{followup.lifeScore}}</td>
+		                        <td>{{followup.acheStandard}}</td>
+		                        <td>{{followup.acheScore}}</td>
+		                    </tr>
+		                </tbody>
+		            </table>
+	              </md-tab>
+	            </md-tabs>
+	          </div>
+	        </div>
+          </md-tab>
+      </md-tabs>
+    </div>
+  </md-content>
+
+
+</div>
+
+
+
+    <!-- CONTENT -->
+<!--     <div class="content">
+
+        <div class="md-title mb-32">Zero Configuration</div>
+        <div class="white-bg md-whiteframe-4dp">
+        </div>
+
+    </div> -->
+    <!-- / CONTENT -->
