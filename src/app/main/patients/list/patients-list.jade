@@ -1,0 +1,159 @@
+#patients.page-layout.simple.fullwidth.doc-page.element-doc-page
+  .header.md-accent-bg(layout='row', layout-align='space-between')
+    div(layout='column', layout-align='center start')
+      .breadcrumb(layout='row', layout-align='start center')
+      .title 患者情况一览表
+
+  .content
+    .white-bg.md-whiteframe-4dp.simple-table-container
+      .table-title#columnfilter(layout='column', layout-gt-xs='row')
+        div.search-row-bottom-line(flex)#name-filter
+        div.search-row-bottom-line(flex)#date-filter
+        md-button.md-accent.add-patient.md-raised(aria-label="Finished") 添加病患
+      table.dataTable.row-border.hover(datatable='ng', dt-options='pl.dtOptions', dt-instance="pl.dtInstance",dt-columns="pl.dtColumns", dt-column-defs="pl.dtColumnDefs")
+        thead
+          tr
+            th.secondary-text
+              .table-header
+                span.column-title 姓名
+            th.secondary-text
+              .table-header
+                span.column-title 性别
+            th.secondary-text
+              .table-header
+                span.column-title 年龄
+            th.secondary-text
+              .table-header
+                span.column-title 城市/区
+            th.secondary-text
+              .table-header
+                span.column-title 初诊时间
+            th.secondary-text
+              .table-header
+                span.column-title 最后诊疗时间
+            th.secondary-text
+              .table-header
+                span.column-title 诊疗次数
+            th.secondary-text
+              .table-header
+                span.column-title id
+
+        tbody
+          tr(ng-repeat="detail in pl.data.data")
+            td {{ detail['姓名'] }}
+            td {{ detail['性别'] }}
+            td {{ detail['年龄'] }}
+            td {{ detail['出生地'] }}
+            td {{ detail['初诊时间'] | formatDateStr }}
+            td {{ detail['最后诊疗时间'] }}
+            td {{ detail['诊疗次数'] }}
+            td {{ detail.id}}
+        tfoot
+          tr
+            td 搜索姓名
+            td 性别
+            td 年龄
+            td 城市/区
+            td 搜索初诊时间
+            td 最后诊疗时间
+            td 诊疗
+
+
+//-                         <td>{{detail['姓名']}}</td>
+//-                         <td>{{detail['性别']}}</td>
+//-                         <td>{{detail['年龄']}}</td>
+//-                         <td>{{detail['出生地']}}</td>
+//-                         <td>{{detail['初诊时间'] | formatDateStr }}</td>
+//-                         <td>{{detail['最后诊疗时间']}}</td>
+//-                         <td>{{detail['诊疗次数']}}</td>
+//-                         <td>{{detail.id}}</td>
+
+
+
+
+
+
+
+
+
+//- <div id="simple-table" class="page-layout simple fullwidth doc-page element-doc-page">
+
+//-     <div class="header md-accent-bg" layout="row" layout-align="space-between">
+//-         <div layout="column" layout-align="center start">
+//-             <div class="title">患者情况一览表</div>
+//-         </div>
+
+//-     </div>
+
+//-     <div class="content">
+//-         <div class="white-bg md-whiteframe-4dp">
+
+//-             <div class="table-title" id="columnfilter" layout='column' layout-gt-xs='row'>
+//-               <div flex id='name-filter'>搜索姓名</div>
+//-               <div flex id='date-filter'>搜索初诊时间</div>
+//-               <md-button class="md-accent add-patient md-raised" aria-label="Finished" >添加病患
+//-               </md-button>
+//-             </div>
+
+//-             <table class="dataTable row-border hover" datatable='ng' dt-options='pl.dtOptions' dt-instance="pl.dtInstance" dt-columns="pl.dtColumns" dt-column-defs="pl.dtColumnDefs">
+//-               <thead>
+//-                     <tr>
+//-                         <th class="secondary-text">
+//-                             <div class="table-header">
+//-                                 <span class="column-title">姓名</span>
+//-                             </div>
+//-                         </th>
+//-                         <th class="secondary-text">
+//-                             <div class="table-header">
+//-                                 <span class="column-title">性别</span>
+//-                             </div>
+//-                         </th>
+//-                         <th class="secondary-text">
+//-                             <div class="table-header">
+//-                                 <span class="column-title">年龄</span>
+//-                             </div>
+//-                         </th>
+//-                         <th class="secondary-text">
+//-                             <div class="table-header">
+//-                                 <span class="column-title">城市/区</span>
+//-                             </div>
+//-                         </th>
+//-                         <th class="secondary-text">
+//-                             <div class="table-header">
+//-                                 <span class="column-title">初诊时间</span>
+//-                             </div>
+//-                         </th>
+//-                         <th class="secondary-text">
+//-                             <div class="table-header">
+//-                                 <span class="column-title">最后诊疗时间</span>
+//-                             </div>
+//-                         </th>
+//-                         <th class="secondary-text">
+//-                             <div class="table-header">
+//-                                 <span class="column-title">诊疗次数</span>
+//-                             </div>
+//-                         </th>
+//-                         <th class="secondary-text">
+//-                             <div class="table-header">
+//-                                 <span class="column-title">id</span>
+//-                             </div>
+//-                         </th>
+//-                     </tr>
+//-               </thead>
+//-               <tbody>
+//-                     <tr ng-repeat="detail in pl.data.data">
+//-                         <td>{{detail['姓名']}}</td>
+//-                         <td>{{detail['性别']}}</td>
+//-                         <td>{{detail['年龄']}}</td>
+//-                         <td>{{detail['出生地']}}</td>
+//-                         <td>{{detail['初诊时间'] | formatDateStr }}</td>
+//-                         <td>{{detail['最后诊疗时间']}}</td>
+//-                         <td>{{detail['诊疗次数']}}</td>
+//-                         <td>{{detail.id}}</td>
+//-                     </tr>
+//-               </tbody>
+//-             </table>
+//-         </div>
+//-     </div>
+
+//- </div>
