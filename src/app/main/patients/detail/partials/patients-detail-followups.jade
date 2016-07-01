@@ -1,0 +1,33 @@
+mixin followups
+  md-tab(label='随访记录')
+    .simple-table-container.md-whiteframe-4dp
+      .table-title
+        md-content.md-padding
+          .white-bg.md-whiteframe-4dp
+            md-tabs(md-dynamic-height='')
+              +suifangjilu
+
+mixin suifangjilu
+  md-tab(label='随访记录')
+    table.simple(ms-responsive-table='')
+      thead
+        tr
+          th 档案号
+          th 随访日期
+          th 生活标准状态
+          th 生活标准评分
+          th 疼痛级别标准
+          th 疼痛级别评分
+      tbody
+        tr(ng-repeat='followup in pd.detail.followups')
+          td {{followup.danganNum}}
+          td {{followup.date}}
+          td {{followup.lifeStandard}}
+          td {{followup.lifeScore}}
+          td {{followup.acheStandard}}
+          td {{followup.acheScore}}
+        tr
+          td
+            md-button.md-fab.md-mini(aria-label='icon-add')
+              md-icon.md-mini-button-style(md-font-icon='icon-plus')
+            span.tianjiaxiaorongzhiliaojilu 添加随访记录

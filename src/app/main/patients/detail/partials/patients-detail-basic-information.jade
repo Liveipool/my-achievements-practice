@@ -1,0 +1,123 @@
+mixin basic-information
+  md-tab(label='基本信息')
+    .simple-table-container.md-whiteframe-4dp
+      .table-title
+        md-content.md-padding
+          .white-bg.md-whiteframe-4dp
+            md-tabs(md-dynamic-height='', md-border-bottom='')
+              +huanzhejibenxinxi
+              +huanzhebingshixinxi
+
+mixin huanzhejibenxinxi
+  md-tab(label='患者基本信息')
+    table.simple
+      thead
+        tr
+          th
+            | 档案号
+            .table-div-style {{pd.danganhao}}
+          th
+            | 姓名
+            .table-div-style {{pd.detail.name}}
+          th
+            | 性别
+            .table-div-style {{pd.detail.gender}}
+          th
+            | 身份证号
+            .table-div-style {{pd.detail.IDNum}}
+        tr
+          th
+            | 年龄
+            .table-div-style {{pd.detail.age}}
+          th
+            | 住院号
+            .table-div-style {{pd.detail.adNum}}
+          th
+            | 影像号
+            .table-div-style {{pd.detail.videoNum}}
+          th
+            | 出生日期
+            .table-div-style {{pd.detail.videoNum}}
+        tr
+          th
+            | 出生地
+            .table-div-style {{pd.detail.birthplace}}
+          th
+            | 民族
+            .table-div-style {{pd.detail.nationality}}
+          th
+            | 血型
+            .table-div-style {{pd.detail.nationality}}
+          th
+            | 婚姻状态
+            .table-div-style {{pd.detail.nationality}}
+        tr
+          th
+            | 身高
+            .table-div-style {{pd.detail.height}}
+          th
+            | 体重
+            .table-div-style {{pd.detail.weight}}KG
+          th
+            | 联系地址
+            .table-div-style {{pd.detail.address}}
+          th
+            | 联系电话
+            .table-div-style {{pd.detail.phone}}
+
+mixin huanzhebingshixinxi
+  md-tab(label='患者病史信息')
+    table.simple
+      thead
+        tr
+          th
+            | 档案号
+            .table-div-style 无
+          th
+            | 姓名
+            .table-div-style 无
+          th
+            | 性别
+            .table-div-style 无
+          th
+            | 身份证号
+            .table-div-style 无
+        tr
+          th
+            | 年龄
+            .table-div-style 无
+          th
+            | 住院号
+            .table-div-style 无
+          th
+            | 影像号
+            .table-div-style 无
+          th
+            | 出生日期
+            .table-div-style 无
+        tr
+          th
+            | 出生地
+            .table-div-style 无
+          th
+            | 民族
+            .table-div-style 无
+          th
+            | 血型
+            .table-div-style 无
+          th
+            | 婚姻状态
+            .table-div-style 无
+        tr
+          th
+            | 身高
+            .table-div-style 无
+          th
+            | 体重
+            .table-div-style 无
+          th
+            | 联系地址
+            .table-div-style 无
+          th
+            | 联系电话
+            .table-div-style 无

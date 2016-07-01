@@ -1,0 +1,955 @@
+include ./partials/patients-detail-basic-information.jade
+include ./partials/patients-detail-acography.jade
+include ./partials/patients-detail-inspection-record.jade
+include ./partials/patients-detail-followups.jade
+
+mixin header
+  .header.md-accent-bg(layout='row', layout-align='space-between')
+    div(layout='column', layout-align='center start')
+      .breadcrumb(layout='row', layout-align='start center')
+        span.parent 患者一览表
+        md-icon.s16.separator(md-font-icon='icon-chevron-right')
+      .title {{pd.name}}患者详情
+
+mixin content
+  md-content.md-padding
+    .white-bg.md-whiteframe-4dp
+      md-tabs(md-dynamic-height='')
+        +basic-information
+        +acography
+        +inspection-record
+        +followups
+
+#simple-table.page-layout.simple.fullwidth.doc-page.element-doc-page
+
+  +header
+  +content
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//- <div id="simple-table" class="page-layout simple fullwidth doc-page element-doc-page">
+
+//-   <div class="header md-accent-bg" layout="row" layout-align="space-between">
+//-     <div layout="column" layout-align="center start">
+//-       <div class="breadcrumb" layout="row" layout-align="start center">
+//-         <span class="parent">患者一览表</span>
+//-         <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+//-       </div>
+//-       <div class="title">{{pd.name}}患者详情</div>
+//-     </div>
+//-   </div>
+
+//-   <md-content class="md-padding">
+//-     <div class="white-bg md-whiteframe-4dp">
+//-       <md-tabs md-dynamic-height>
+//-         <md-tab label="基本信息">
+//-           <div class="simple-table-container md-whiteframe-4dp">
+//-             <div class="table-title">
+//-               <md-content class="md-padding">
+//-                 <div class="white-bg md-whiteframe-4dp">
+//-                   <md-tabs md-dynamic-height md-border-bottom>
+//-                     <md-tab label="患者基本信息">
+//-                       <table class="simple">
+//-                         <thead>
+//-                           <tr>
+//-                             <th>档案号<div class="table-div-style">{{pd.danganhao}}</div></th>
+//-                             <th>姓名<div class="table-div-style">{{pd.detail.name}}</div></th>
+//-                             <th>性别<div class="table-div-style">{{pd.detail.gender}}</div></th>
+//-                             <th>身份证号<div class="table-div-style">{{pd.detail.IDNum}}</div></th>
+//-                           </tr>
+//-                           <tr>
+//-                             <th>年龄<div class="table-div-style">{{pd.detail.age}}</div></th>
+//-                             <th>住院号<div class="table-div-style">{{pd.detail.adNum}}</div></th>
+//-                             <th>影像号<div class="table-div-style">{{pd.detail.videoNum}}</div></th>
+//-                             <th>出生日期<div class="table-div-style">{{pd.detail.videoNum}}</div></th>
+//-                           </tr>
+//-                           <tr>
+//-                             <th>出生地<div class="table-div-style">{{pd.detail.birthplace}}</div></th>
+//-                             <th>民族<div class="table-div-style">{{pd.detail.nationality}}</div></th>
+//-                             <th>血型<div class="table-div-style">{{pd.detail.nationality}}</div></th>
+//-                             <th>婚姻状态<div class="table-div-style">{{pd.detail.nationality}}</div></th>
+//-                           </tr>
+//-                           <tr>
+//-                             <th>身高<div class="table-div-style">{{pd.detail.height}}</div></th>
+//-                             <th>体重<div class="table-div-style">{{pd.detail.weight}}KG</div></th>
+//-                             <th>联系地址<div class="table-div-style">{{pd.detail.address}}</div></th>
+//-                             <th>联系电话<div class="table-div-style">{{pd.detail.phone}}</div></th>
+//-                           </tr>
+//-                         </thead>
+//-                       </table>
+//-                     </md-tab>
+//-                     <md-tab label="患者病史信息">
+//-                       <table class="simple">
+//-                         <thead>
+//-                           <tr>
+//-                             <th>档案号<div class="table-div-style">无</div></th>
+//-                             <th>姓名<div class="table-div-style">无</div></th>
+//-                             <th>性别<div class="table-div-style">无</div></th>
+//-                             <th>身份证号<div class="table-div-style">无</div></th>
+//-                           </tr>
+//-                           <tr>
+//-                             <th>年龄<div class="table-div-style">无</div></th>
+//-                             <th>住院号<div class="table-div-style">无</div></th>
+//-                             <th>影像号<div class="table-div-style">无</div></th>
+//-                             <th>出生日期<div class="table-div-style">无</div></th>
+//-                           </tr>
+//-                           <tr>
+//-                             <th>出生地<div class="table-div-style">无</div></th>
+//-                             <th>民族<div class="table-div-style">无</div></th>
+//-                             <th>血型<div class="table-div-style">无</div></th>
+//-                             <th>婚姻状态<div class="table-div-style">无</div></th>
+//-                           </tr>
+//-                           <tr>
+//-                             <th>身高<div class="table-div-style">无</div></th>
+//-                             <th>体重<div class="table-div-style">无</div></th>
+//-                             <th>联系地址<div class="table-div-style">无</div></th>
+//-                             <th>联系电话<div class="table-div-style">无</div></th>
+//-                           </tr>
+//-                         </thead>
+//-                       </table>
+//-                    </md-tab>
+//-                   </md-tabs>
+//-                 </div>
+//-               </md-content>
+//-             </div>
+//-           </div>
+//-         </md-tab>
+//-         <md-tab label="治疗记录">
+//-           <div class="simple-table-container md-whiteframe-4dp">
+//-             <div class="table-title">
+//-               <md-content class="md-padding">
+//-                 <div class="white-bg md-whiteframe-4dp">
+//-                   <md-tabs md-dynamic-height>
+//-                     <md-tab label="消融治疗">
+//-                       <table class="simple" ms-responsive-table>
+//-                         <thead>
+//-                           <tr>
+//-                               <th>档案号</th>
+//-                               <th>手术号</th>
+//-                               <th>原发位置</th>
+//-                               <th>确诊方式</th>
+//-                               <th>病理诊断</th>
+//-                               <th>免疫组化信息</th>
+//-                           </tr>
+//-                         </thead>
+//-                         <tbody>
+//-                           <tr ng-repeat="xiaorong in pd.detail.acography.xiaorongs">
+//-                               <td>{{xiaorong.danganNum}}</td>
+//-                               <td>{{xiaorong.shoushuNum}}</td>
+//-                               <td>{{xiaorong.position}}</td>
+//-                               <td>{{xiaorong.ways}}</td>
+//-                               <td>{{xiaorong.bingli}}</td>
+//-                               <td>{{xiaorong.mianyi}}</td>
+//-                           </tr>
+//-                           <tr>
+//-                             <td>
+//-                                   <md-button class="md-fab md-mini" aria-label="icon-add">
+//-                                     <md-icon md-font-icon="icon-plus" class=" md-mini-button-style"></md-icon>
+//-                                   </md-button>
+//-                                   <span class="tianjiaxiaorongzhiliaojilu">添加消融治疗记录</span>
+//-                             </td>
+//-                             </tr>
+//-                         </tbody>
+//-                       </table>
+//-                     </md-tab>
+//-                     <md-tab label="化疗记录">
+//-                       <table class="simple" ms-responsive-table>
+//-                         <thead>
+//-                           <tr>
+//-                             <th>档案号</th>
+//-                             <th>手术号</th>
+//-                             <th>发病日期</th>
+//-                             <th>药品</th>
+//-                             <th>疗程数</th>
+//-                             <th>效果</th>
+//-                             <th>病发</th>
+//-                             <th>其他</th>
+//-                           </tr>
+//-                         </thead>
+//-                         <tbody>
+//-                           <tr ng-repeat="hualiao in pd.detail.acography.hualiaos">
+//-                             <td>{{hualiao.danganNum}}</td>
+//-                             <td>{{hualiao.shoushuNum}}</td>
+//-                             <td>{{hualiao.date}}</td>
+//-                             <td>{{hualiao.medicine}}</td>
+//-                             <td>{{hualiao.liaochengNum}}</td>
+//-                             <td>{{hualiao.effect}}</td>
+//-                             <td>{{hualiao.bingfa}}</td>
+//-                             <td>{{hualiao.other}}</td>
+//-                           </tr>
+//-                             <tr>
+//-                               <td>
+//-                                 <md-button class="md-fab md-mini" aria-label="icon-add">
+//-                                   <md-icon md-font-icon="icon-plus" class=" md-mini-button-style"></md-icon>
+//-                                 </md-button>
+//-                                 <span class="tianjiaxiaorongzhiliaojilu">添加化疗记录</span>
+//-                               </td>
+//-                             </tr>
+//-                         </tbody>
+//-                       </table>
+//-                     </md-tab>
+//-                     <md-tab label="放疗记录">
+//-                       <table class="simple" ms-responsive-table>
+//-                         <thead>
+//-                           <tr>
+//-                             <th>档案号</th>
+//-                             <th>手术号</th>
+//-                             <th>日期</th>
+//-                             <th>方法</th>
+//-                             <th>位置</th>
+//-                             <th>剂量</th>
+//-                             <th>病发</th>
+//-                             <th>其他</th>
+//-                           </tr>
+//-                         </thead>
+//-                         <tbody>
+//-                           <tr ng-repeat="fangliao in pd.detail.acography.fangliaos">
+//-                             <td>{{fangliao.danganNum}}</td>
+//-                             <td>{{fangliao.shoushuNum}}</td>
+//-                             <td>{{fangliao.date}}</td>
+//-                             <td>{{fangliao.ways}}</td>
+//-                             <td>{{fangliao.position}}</td>
+//-                             <td>{{fangliao.amount}}</td>
+//-                             <td>{{fangliao.bingfa}}</td>
+//-                             <td>{{fangliao.other}}</td>
+//-                           </tr>
+//-                           <tr>
+//-                             <td>
+//-                               <md-button class="md-fab md-mini" aria-label="icon-add">
+//-                                 <md-icon md-font-icon="icon-plus" class=" md-mini-button-style"></md-icon>
+//-                               </md-button>
+//-                               <span class="tianjiaxiaorongzhiliaojilu">添加放疗记录</span>
+//-                             </td>
+//-                           </tr>
+//-                         </tbody>
+//-                       </table>
+//-                     </md-tab>
+//-                     <md-tab label="外科手术">
+//-                       <table class="simple" ms-responsive-table>
+//-                         <thead>
+//-                           <tr>
+//-                             <th>档案号</th>
+//-                             <th>手术号</th>
+//-                             <th>日期</th>
+//-                             <th>方法</th>
+//-                             <th>位置</th>
+//-                             <th>状态</th>
+//-                             <th>病发</th>
+//-                             <th>其他</th>
+//-                           </tr>
+//-                         </thead>
+//-                         <tbody>
+//-                           <tr ng-repeat="waike in pd.detail.acography.waikes">
+//-                             <td>{{waike.danganNum}}</td>
+//-                             <td>{{waike.shoushuNum}}</td>
+//-                             <td>{{waike.date}}</td>
+//-                             <td>{{waike.ways}}</td>
+//-                             <td>{{waike.position}}</td>
+//-                             <td>{{waike.state}}</td>
+//-                             <td>{{waike.bingfa}}</td>
+//-                             <td>{{waike.other}}</td>
+//-                           </tr>
+//-                           <tr>
+//-                             <td>
+//-                               <md-button class="md-fab md-mini" aria-label="icon-add">
+//-                                 <md-icon md-font-icon="icon-plus" class=" md-mini-button-style"></md-icon>
+//-                               </md-button>
+//-                               <span class="tianjiaxiaorongzhiliaojilu">添加外科手术记录</span>
+//-                             </td>
+//-                           </tr>
+//-                         </tbody>
+//-                       </table>
+//-                     </md-tab>
+//-                   </md-tabs>
+//-                 </div>
+//-               </md-content>
+//-             </div>
+//-           </div>
+//-         </md-tab>
+//-         <md-tab label="检查记录">
+//-           <div class="simple-table-container md-whiteframe-4dp">
+//-             <div class="table-title">
+//-               <md-content class="md-padding">
+//-                 <div class="white-bg md-whiteframe-4dp">
+//-                   <md-tabs md-dynamic-height>
+//-                     <md-tab label="超声检查">
+//-                       <table class="simple" ms-responsive-table>
+//-                         <thead>
+//-                           <tr>
+//-                             <th>档案号</th>
+//-                             <th>超声号</th>
+//-                             <th>是否超声造影记录</th>
+//-                             <th>住院号</th>
+//-                             <th>病床号</th>
+//-                             <th>检查部位</th>
+//-                             <th>送检日期</th>
+//-                             <th>影像表现</th>
+//-                             <th>影响意见</th>
+//-                           </tr>
+//-                         </thead>
+//-                         <tbody>
+//-                           <tr ng-repeat="chaosheng in pd.detail.inspectionRecord.chaoshengs">
+//-                             <td>{{chaosheng.danganNum}}</td>
+//-                             <td>{{chaosheng.chaoshengNum}}</td>
+//-                             <td>{{chaosheng.zaoying}}</td>
+//-                             <td>{{chaosheng.zhuyuanNum}}</td>
+//-                             <td>{{chaosheng.bingchuangNum}}</td>
+//-                             <td>{{chaosheng.position}}</td>
+//-                             <td>{{chaosheng.date}}</td>
+//-                             <td>{{chaosheng.performance}}</td>
+//-                             <td>{{chaosheng.opinion}}</td>
+//-                           </tr>
+//-                           <tr>
+//-                             <td>
+//-                               <md-button class="md-fab md-mini" aria-label="icon-add">
+//-                                <md-icon md-font-icon="icon-plus" class=" md-mini-button-style"></md-icon>
+//-                               </md-button>
+//-                               <span class="tianjiaxiaorongzhiliaojilu">添加超声检查记录</span>
+//-                             </td>
+//-                           </tr>
+//-                         </tbody>
+//-                       </table>
+//-                     </md-tab>
+//-                     <md-tab label="CT检查">
+//-                       <table class="simple" ms-responsive-table>
+//-                         <thead>
+//-                           <tr>
+//-                             <th>档案号</th>
+//-                             <th>CT号</th>
+//-                             <th>是否增强</th>
+//-                             <th>住院号</th>
+//-                             <th>病床号</th>
+//-                             <th>检查部位</th>
+//-                             <th>送检日期</th>
+//-                             <th>影像表现</th>
+//-                             <th>影响意见</th>
+//-                           </tr>
+//-                         </thead>
+//-                         <tbody>
+//-                           <tr ng-repeat="CT in pd.detail.inspectionRecord.CTs">
+//-                             <td>{{CT.danganNum}}</td>
+//-                             <td>{{CT.CTNum}}</td>
+//-                             <td>{{CT.zaoying}}</td>
+//-                             <td>{{CT.zhuyuanNum}}</td>
+//-                             <td>{{CT.bingchuangNum}}</td>
+//-                             <td>{{CT.position}}</td>
+//-                             <td>{{CT.date}}</td>
+//-                             <td>{{CT.performance}}</td>
+//-                             <td>{{CT.opinion}}</td>
+//-                           </tr>
+//-                           <tr>
+//-                             <td>
+//-                               <md-button class="md-fab md-mini" aria-label="icon-add">
+//-                                 <md-icon md-font-icon="icon-plus" class=" md-mini-button-style"></md-icon>
+//-                               </md-button>
+//-                               <span class="tianjiaxiaorongzhiliaojilu">添加CT检查记录</span>
+//-                             </td>
+//-                           </tr>
+//-                         </tbody>
+//-                       </table>
+//-                     </md-tab>
+//-                     <md-tab label="MRI检查">
+//-                       <table class="simple" ms-responsive-table>
+//-                         <thead>
+//-                           <tr>
+//-                             <th>档案号</th>
+//-                             <th>MRI号</th>
+//-                             <th>住院号</th>
+//-                             <th>病床号</th>
+//-                             <th>检查部位</th>
+//-                             <th>送检日期</th>
+//-                             <th>其他</th>
+//-                             <th>影像表现</th>
+//-                             <th>影响意见</th>
+//-                           </tr>
+//-                         </thead>
+//-                         <tbody>
+//-                           <tr ng-repeat="MRI in pd.detail.inspectionRecord.MRIs">
+//-                             <td>{{MRI.danganNum}}</td>
+//-                             <td>{{MRI.MRINum}}</td>
+//-                             <td>{{MRI.zhuyuanNum}}</td>
+//-                             <td>{{MRI.bingchuangNum}}</td>
+//-                             <td>{{MRI.position}}</td>
+//-                             <td>{{MRI.date}}</td>
+//-                             <td>{{MRI.other}}</td>
+//-                             <td>{{MRI.performance}}</td>
+//-                             <td>{{MRI.opinion}}</td>
+//-                           </tr>
+//-                           <tr>
+//-                             <td>
+//-                               <md-button class="md-fab md-mini" aria-label="icon-add">
+//-                                 <md-icon md-font-icon="icon-plus" class=" md-mini-button-style"></md-icon>
+//-                               </md-button>
+//-                               <span class="tianjiaxiaorongzhiliaojilu">添加MRI检查记录</span>
+//-                             </td>
+//-                           </tr>
+//-                         </tbody>
+//-                       </table>
+//-                     </md-tab>
+//-                     <md-tab label="PETCT检查">
+//-                       <table class="simple" ms-responsive-table>
+//-                         <thead>
+//-                           <tr>
+//-                             <th>档案号</th>
+//-                             <th>CT号</th>
+//-                             <th>住院号</th>
+//-                             <th>病床号</th>
+//-                             <th>检查部位</th>
+//-                             <th>送检日期</th>
+//-                             <th>其他</th>
+//-                             <th>影像表现</th>
+//-                             <th>影响意见</th>
+//-                           </tr>
+//-                         </thead>
+//-                         <tbody>
+//-                           <tr ng-repeat="PETCT in pd.detail.inspectionRecord.PETCTs">
+//-                             <td>{{PETCT.danganNum}}</td>
+//-                             <td>{{PETCT.CTNum}}</td>
+//-                             <td>{{PETCT.zhuyuanNum}}</td>
+//-                             <td>{{PETCT.bingchuangNum}}</td>
+//-                             <td>{{PETCT.position}}</td>
+//-                             <td>{{PETCT.date}}</td>
+//-                             <td>{{PETCT.other}}</td>
+//-                             <td>{{PETCT.performance}}</td>
+//-                             <td>{{PETCT.opinion}}</td>
+//-                           </tr>
+//-                           <tr>
+//-                             <td>
+//-                               <md-button class="md-fab md-mini" aria-label="icon-add">
+//-                                 <md-icon md-font-icon="icon-plus" class=" md-mini-button-style"></md-icon>
+//-                               </md-button>
+//-                               <span class="tianjiaxiaorongzhiliaojilu">添加PETCT检查记录</span>
+//-                             </td>
+//-                           </tr>
+//-                         </tbody>
+//-                       </table>
+//-                     </md-tab>
+//-                     <md-tab label="病理分析">
+//-                       <table class="simple" ms-responsive-table>
+//-                         <thead>
+//-                           <tr>
+//-                             <th>档案号</th>
+//-                             <th>病理号</th>
+//-                             <th>标本号</th>
+//-                             <th>病床号</th>
+//-                             <th>检查部位</th>
+//-                             <th>送检日期</th>
+//-                             <th>诊断</th>
+//-                             <th>影像表现</th>
+//-                             <th>影响意见</th>
+//-                           </tr>
+//-                         </thead>
+//-                         <tbody>
+//-                           <tr ng-repeat="bingli in pd.detail.inspectionRecord.binglis">
+//-                             <td>{{bingli.danganNum}}</td>
+//-                             <td>{{bingli.bingliNum}}</td>
+//-                             <td>{{bingli.biaobenNum}}</td>
+//-                             <td>{{bingli.bingchuangNum}}</td>
+//-                             <td>{{bingli.type}}</td>
+//-                             <td>{{bingli.date}}</td>
+//-                             <td>{{bingli.zhenduan}}</td>
+//-                             <td>{{bingli.performance}}</td>
+//-                             <td>{{bingli.opinion}}</td>
+//-                           </tr>
+//-                           <tr>
+//-                             <td>
+//-                               <md-button class="md-fab md-mini" aria-label="icon-add">
+//-                                 <md-icon md-font-icon="icon-plus" class=" md-mini-button-style"></md-icon>
+//-                               </md-button>
+//-                               <span class="tianjiaxiaorongzhiliaojilu">添加病理分析记录</span>
+//-                             </td>
+//-                           </tr>
+//-                         </tbody>
+//-                       </table>
+//-                     </md-tab>
+//-                   </md-tabs>
+//-                 </div>
+//-               </md-content>
+//-             </div>
+//-           </div>
+//-         </md-tab>
+//-         <md-tab label="随访记录">
+//-           <div class="simple-table-container md-whiteframe-4dp">
+//-             <div class="table-title">
+//-               <md-content class="md-padding">
+//-                 <div class="white-bg md-whiteframe-4dp">
+//-                   <md-tabs md-dynamic-height>
+//-                     <md-tab label="随访记录">
+//-                       <table class="simple" ms-responsive-table>
+//-                         <thead>
+//-                           <tr>
+//-                             <th>档案号</th>
+//-                             <th>随访日期</th>
+//-                             <th>生活标准状态</th>
+//-                             <th>生活标准评分</th>
+//-                             <th>疼痛级别标准</th>
+//-                             <th>疼痛级别评分</th>
+//-                           </tr>
+//-                         </thead>
+//-                         <tbody>
+//-                           <tr ng-repeat="followup in pd.detail.followups">
+//-                             <td>{{followup.danganNum}}</td>
+//-                             <td>{{followup.date}}</td>
+//-                             <td>{{followup.lifeStandard}}</td>
+//-                             <td>{{followup.lifeScore}}</td>
+//-                             <td>{{followup.acheStandard}}</td>
+//-                             <td>{{followup.acheScore}}</td>
+//-                           </tr>
+//-                           <tr>
+//-                             <td>
+//-                               <md-button class="md-fab md-mini" aria-label="icon-add">
+//-                                 <md-icon md-font-icon="icon-plus" class=" md-mini-button-style"></md-icon>
+//-                               </md-button>
+//-                             </td>
+//-                           </tr>
+//-                         </tbody>
+//-                       </table>
+//-                     </md-tab>
+//-                   </md-tabs>
+//-                 </div>
+//-               </md-content>
+//-             </div>
+//-           </div>
+//-         </md-tab>
+//-       </md-tabs>
+//-     </div>
+//-   </md-content>
+//- </div>
+
+
+
+
+
+
+
+//- .header.md-accent-bg(layout='row', layout-align='space-between')
+//-   div(layout='column', layout-align='center start')
+//-     .breadcrumb(layout='row', layout-align='start center')
+//-       span.parent 患者一览表
+//-       md-icon.s16.separator(md-font-icon='icon-chevron-right')
+//-     .title {{pd.name}}患者详情
+//- md-content.md-padding
+//-   .white-bg.md-whiteframe-4dp
+//-     md-tabs(md-dynamic-height='')
+//-       md-tab(label='基本信息')
+//-         .simple-table-container.md-whiteframe-4dp
+//-           .table-title
+//-             md-content.md-padding
+//-               .white-bg.md-whiteframe-4dp
+//-                 md-tabs(md-dynamic-height='', md-border-bottom='')
+//-                   md-tab(label='患者基本信息')
+//-                     table.simple
+//-                       thead
+//-                         tr
+//-                           th
+//-                             | 档案号
+//-                             .table-div-style {{pd.danganhao}}
+//-                           th
+//-                             | 姓名
+//-                             .table-div-style {{pd.detail.name}}
+//-                           th
+//-                             | 性别
+//-                             .table-div-style {{pd.detail.gender}}
+//-                           th
+//-                             | 身份证号
+//-                             .table-div-style {{pd.detail.IDNum}}
+//-                         tr
+//-                           th
+//-                             | 年龄
+//-                             .table-div-style {{pd.detail.age}}
+//-                           th
+//-                             | 住院号
+//-                             .table-div-style {{pd.detail.adNum}}
+//-                           th
+//-                             | 影像号
+//-                             .table-div-style {{pd.detail.videoNum}}
+//-                           th
+//-                             | 出生日期
+//-                             .table-div-style {{pd.detail.videoNum}}
+//-                         tr
+//-                           th
+//-                             | 出生地
+//-                             .table-div-style {{pd.detail.birthplace}}
+//-                           th
+//-                             | 民族
+//-                             .table-div-style {{pd.detail.nationality}}
+//-                           th
+//-                             | 血型
+//-                             .table-div-style {{pd.detail.nationality}}
+//-                           th
+//-                             | 婚姻状态
+//-                             .table-div-style {{pd.detail.nationality}}
+//-                         tr
+//-                           th
+//-                             | 身高
+//-                             .table-div-style {{pd.detail.height}}
+//-                           th
+//-                             | 体重
+//-                             .table-div-style {{pd.detail.weight}}KG
+//-                           th
+//-                             | 联系地址
+//-                             .table-div-style {{pd.detail.address}}
+//-                           th
+//-                             | 联系电话
+//-                             .table-div-style {{pd.detail.phone}}
+//-                   md-tab(label='患者病史信息')
+//-                     table.simple
+//-                       thead
+//-                         tr
+//-                           th
+//-                             | 档案号
+//-                             .table-div-style 无
+//-                           th
+//-                             | 姓名
+//-                             .table-div-style 无
+//-                           th
+//-                             | 性别
+//-                             .table-div-style 无
+//-                           th
+//-                             | 身份证号
+//-                             .table-div-style 无
+//-                         tr
+//-                           th
+//-                             | 年龄
+//-                             .table-div-style 无
+//-                           th
+//-                             | 住院号
+//-                             .table-div-style 无
+//-                           th
+//-                             | 影像号
+//-                             .table-div-style 无
+//-                           th
+//-                             | 出生日期
+//-                             .table-div-style 无
+//-                         tr
+//-                           th
+//-                             | 出生地
+//-                             .table-div-style 无
+//-                           th
+//-                             | 民族
+//-                             .table-div-style 无
+//-                           th
+//-                             | 血型
+//-                             .table-div-style 无
+//-                           th
+//-                             | 婚姻状态
+//-                             .table-div-style 无
+//-                         tr
+//-                           th
+//-                             | 身高
+//-                             .table-div-style 无
+//-                           th
+//-                             | 体重
+//-                             .table-div-style 无
+//-                           th
+//-                             | 联系地址
+//-                             .table-div-style 无
+//-                           th
+//-                             | 联系电话
+//-                             .table-div-style 无
+//-       md-tab(label='治疗记录')
+//-         .simple-table-container.md-whiteframe-4dp
+//-           .table-title
+//-             md-content.md-padding
+//-               .white-bg.md-whiteframe-4dp
+//-                 md-tabs(md-dynamic-height='')
+//-                   md-tab(label='消融治疗')
+//-                     table.simple(ms-responsive-table='')
+//-                       thead
+//-                         tr
+//-                           th 档案号
+//-                           th 手术号
+//-                           th 原发位置
+//-                           th 确诊方式
+//-                           th 病理诊断
+//-                           th 免疫组化信息
+//-                       tbody
+//-                         tr(ng-repeat='xiaorong in pd.detail.acography.xiaorongs')
+//-                           td {{xiaorong.danganNum}}
+//-                           td {{xiaorong.shoushuNum}}
+//-                           td {{xiaorong.position}}
+//-                           td {{xiaorong.ways}}
+//-                           td {{xiaorong.bingli}}
+//-                           td {{xiaorong.mianyi}}
+//-                         tr
+//-                           td
+//-                             md-button.md-fab.md-mini(aria-label='icon-add')
+//-                               md-icon.md-mini-button-style(md-font-icon='icon-plus')
+//-                             span.tianjiaxiaorongzhiliaojilu 添加消融治疗记录
+//-                   md-tab(label='化疗记录')
+//-                     table.simple(ms-responsive-table='')
+//-                       thead
+//-                         tr
+//-                           th 档案号
+//-                           th 手术号
+//-                           th 发病日期
+//-                           th 药品
+//-                           th 疗程数
+//-                           th 效果
+//-                           th 病发
+//-                           th 其他
+//-                       tbody
+//-                         tr(ng-repeat='hualiao in pd.detail.acography.hualiaos')
+//-                           td {{hualiao.danganNum}}
+//-                           td {{hualiao.shoushuNum}}
+//-                           td {{hualiao.date}}
+//-                           td {{hualiao.medicine}}
+//-                           td {{hualiao.liaochengNum}}
+//-                           td {{hualiao.effect}}
+//-                           td {{hualiao.bingfa}}
+//-                           td {{hualiao.other}}
+//-                         tr
+//-                           td
+//-                             md-button.md-fab.md-mini(aria-label='icon-add')
+//-                               md-icon.md-mini-button-style(md-font-icon='icon-plus')
+//-                             span.tianjiaxiaorongzhiliaojilu 添加化疗记录
+//-                   md-tab(label='放疗记录')
+//-                     table.simple(ms-responsive-table='')
+//-                       thead
+//-                         tr
+//-                           th 档案号
+//-                           th 手术号
+//-                           th 日期
+//-                           th 方法
+//-                           th 位置
+//-                           th 剂量
+//-                           th 病发
+//-                           th 其他
+//-                       tbody
+//-                         tr(ng-repeat='fangliao in pd.detail.acography.fangliaos')
+//-                           td {{fangliao.danganNum}}
+//-                           td {{fangliao.shoushuNum}}
+//-                           td {{fangliao.date}}
+//-                           td {{fangliao.ways}}
+//-                           td {{fangliao.position}}
+//-                           td {{fangliao.amount}}
+//-                           td {{fangliao.bingfa}}
+//-                           td {{fangliao.other}}
+//-                         tr
+//-                           td
+//-                             md-button.md-fab.md-mini(aria-label='icon-add')
+//-                               md-icon.md-mini-button-style(md-font-icon='icon-plus')
+//-                             span.tianjiaxiaorongzhiliaojilu 添加放疗记录
+//-                   md-tab(label='外科手术')
+//-                     table.simple(ms-responsive-table='')
+//-                       thead
+//-                         tr
+//-                           th 档案号
+//-                           th 手术号
+//-                           th 日期
+//-                           th 方法
+//-                           th 位置
+//-                           th 状态
+//-                           th 病发
+//-                           th 其他
+//-                       tbody
+//-                         tr(ng-repeat='waike in pd.detail.acography.waikes')
+//-                           td {{waike.danganNum}}
+//-                           td {{waike.shoushuNum}}
+//-                           td {{waike.date}}
+//-                           td {{waike.ways}}
+//-                           td {{waike.position}}
+//-                           td {{waike.state}}
+//-                           td {{waike.bingfa}}
+//-                           td {{waike.other}}
+//-                         tr
+//-                           td
+//-                             md-button.md-fab.md-mini(aria-label='icon-add')
+//-                               md-icon.md-mini-button-style(md-font-icon='icon-plus')
+//-                             span.tianjiaxiaorongzhiliaojilu 添加外科手术记录
+//-       md-tab(label='检查记录')
+//-         .simple-table-container.md-whiteframe-4dp
+//-           .table-title
+//-             md-content.md-padding
+//-               .white-bg.md-whiteframe-4dp
+//-                 md-tabs(md-dynamic-height='')
+//-                   md-tab(label='超声检查')
+//-                     table.simple(ms-responsive-table='')
+//-                       thead
+//-                         tr
+//-                           th 档案号
+//-                           th 超声号
+//-                           th 是否超声造影记录
+//-                           th 住院号
+//-                           th 病床号
+//-                           th 检查部位
+//-                           th 送检日期
+//-                           th 影像表现
+//-                           th 影响意见
+//-                       tbody
+//-                         tr(ng-repeat='chaosheng in pd.detail.inspectionRecord.chaoshengs')
+//-                           td {{chaosheng.danganNum}}
+//-                           td {{chaosheng.chaoshengNum}}
+//-                           td {{chaosheng.zaoying}}
+//-                           td {{chaosheng.zhuyuanNum}}
+//-                           td {{chaosheng.bingchuangNum}}
+//-                           td {{chaosheng.position}}
+//-                           td {{chaosheng.date}}
+//-                           td {{chaosheng.performance}}
+//-                           td {{chaosheng.opinion}}
+//-                         tr
+//-                           td
+//-                             md-button.md-fab.md-mini(aria-label='icon-add')
+//-                               md-icon.md-mini-button-style(md-font-icon='icon-plus')
+//-                             span.tianjiaxiaorongzhiliaojilu 添加超声检查记录
+//-                   md-tab(label='CT检查')
+//-                     table.simple(ms-responsive-table='')
+//-                       thead
+//-                         tr
+//-                           th 档案号
+//-                           th CT号
+//-                           th 是否增强
+//-                           th 住院号
+//-                           th 病床号
+//-                           th 检查部位
+//-                           th 送检日期
+//-                           th 影像表现
+//-                           th 影响意见
+//-                       tbody
+//-                         tr(ng-repeat='CT in pd.detail.inspectionRecord.CTs')
+//-                           td {{CT.danganNum}}
+//-                           td {{CT.CTNum}}
+//-                           td {{CT.zaoying}}
+//-                           td {{CT.zhuyuanNum}}
+//-                           td {{CT.bingchuangNum}}
+//-                           td {{CT.position}}
+//-                           td {{CT.date}}
+//-                           td {{CT.performance}}
+//-                           td {{CT.opinion}}
+//-                         tr
+//-                           td
+//-                             md-button.md-fab.md-mini(aria-label='icon-add')
+//-                               md-icon.md-mini-button-style(md-font-icon='icon-plus')
+//-                             span.tianjiaxiaorongzhiliaojilu 添加CT检查记录
+//-                   md-tab(label='MRI检查')
+//-                     table.simple(ms-responsive-table='')
+//-                       thead
+//-                         tr
+//-                           th 档案号
+//-                           th MRI号
+//-                           th 住院号
+//-                           th 病床号
+//-                           th 检查部位
+//-                           th 送检日期
+//-                           th 其他
+//-                           th 影像表现
+//-                           th 影响意见
+//-                       tbody
+//-                         tr(ng-repeat='MRI in pd.detail.inspectionRecord.MRIs')
+//-                           td {{MRI.danganNum}}
+//-                           td {{MRI.MRINum}}
+//-                           td {{MRI.zhuyuanNum}}
+//-                           td {{MRI.bingchuangNum}}
+//-                           td {{MRI.position}}
+//-                           td {{MRI.date}}
+//-                           td {{MRI.other}}
+//-                           td {{MRI.performance}}
+//-                           td {{MRI.opinion}}
+//-                         tr
+//-                           td
+//-                             md-button.md-fab.md-mini(aria-label='icon-add')
+//-                               md-icon.md-mini-button-style(md-font-icon='icon-plus')
+//-                             span.tianjiaxiaorongzhiliaojilu 添加MRI检查记录
+//-                   md-tab(label='PETCT检查')
+//-                     table.simple(ms-responsive-table='')
+//-                       thead
+//-                         tr
+//-                           th 档案号
+//-                           th CT号
+//-                           th 住院号
+//-                           th 病床号
+//-                           th 检查部位
+//-                           th 送检日期
+//-                           th 其他
+//-                           th 影像表现
+//-                           th 影响意见
+//-                       tbody
+//-                         tr(ng-repeat='PETCT in pd.detail.inspectionRecord.PETCTs')
+//-                           td {{PETCT.danganNum}}
+//-                           td {{PETCT.CTNum}}
+//-                           td {{PETCT.zhuyuanNum}}
+//-                           td {{PETCT.bingchuangNum}}
+//-                           td {{PETCT.position}}
+//-                           td {{PETCT.date}}
+//-                           td {{PETCT.other}}
+//-                           td {{PETCT.performance}}
+//-                           td {{PETCT.opinion}}
+//-                         tr
+//-                           td
+//-                             md-button.md-fab.md-mini(aria-label='icon-add')
+//-                               md-icon.md-mini-button-style(md-font-icon='icon-plus')
+//-                             span.tianjiaxiaorongzhiliaojilu 添加PETCT检查记录
+//-                   md-tab(label='病理分析')
+//-                     table.simple(ms-responsive-table='')
+//-                       thead
+//-                         tr
+//-                           th 档案号
+//-                           th 病理号
+//-                           th 标本号
+//-                           th 病床号
+//-                           th 检查部位
+//-                           th 送检日期
+//-                           th 诊断
+//-                           th 影像表现
+//-                           th 影响意见
+//-                       tbody
+//-                         tr(ng-repeat='bingli in pd.detail.inspectionRecord.binglis')
+//-                           td {{bingli.danganNum}}
+//-                           td {{bingli.bingliNum}}
+//-                           td {{bingli.biaobenNum}}
+//-                           td {{bingli.bingchuangNum}}
+//-                           td {{bingli.type}}
+//-                           td {{bingli.date}}
+//-                           td {{bingli.zhenduan}}
+//-                           td {{bingli.performance}}
+//-                           td {{bingli.opinion}}
+//-                         tr
+//-                           td
+//-                             md-button.md-fab.md-mini(aria-label='icon-add')
+//-                               md-icon.md-mini-button-style(md-font-icon='icon-plus')
+//-                             span.tianjiaxiaorongzhiliaojilu 添加病理分析记录
+//-       md-tab(label='随访记录')
+//-         .simple-table-container.md-whiteframe-4dp
+//-           .table-title
+//-             md-content.md-padding
+//-               .white-bg.md-whiteframe-4dp
+//-                 md-tabs(md-dynamic-height='')
+//-                   md-tab(label='随访记录')
+//-                     table.simple(ms-responsive-table='')
+//-                       thead
+//-                         tr
+//-                           th 档案号
+//-                           th 随访日期
+//-                           th 生活标准状态
+//-                           th 生活标准评分
+//-                           th 疼痛级别标准
+//-                           th 疼痛级别评分
+//-                       tbody
+//-                         tr(ng-repeat='followup in pd.detail.followups')
+//-                           td {{followup.danganNum}}
+//-                           td {{followup.date}}
+//-                           td {{followup.lifeStandard}}
+//-                           td {{followup.lifeScore}}
+//-                           td {{followup.acheStandard}}
+//-                           td {{followup.acheScore}}
+//-                         tr
+//-                           td
+//-                             md-button.md-fab.md-mini(aria-label='icon-add')
+//-                               md-icon.md-mini-button-style(md-font-icon='icon-plus')

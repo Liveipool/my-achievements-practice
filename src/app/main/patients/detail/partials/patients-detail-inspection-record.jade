@@ -1,0 +1,167 @@
+mixin inspection-record
+  md-tab(label='检查记录')
+    .simple-table-container.md-whiteframe-4dp
+      .table-title
+        md-content.md-padding
+          .white-bg.md-whiteframe-4dp
+            md-tabs(md-dynamic-height='')
+              +chaoshengjiancha
+              +CTjiancha
+              +MRIjiancha
+              +PETCTjiancha
+              +binglifenxi
+
+mixin chaoshengjiancha
+  md-tab(label='超声检查')
+    table.simple(ms-responsive-table='')
+      thead
+        tr
+          th 档案号
+          th 超声号
+          th 是否超声造影记录
+          th 住院号
+          th 病床号
+          th 检查部位
+          th 送检日期
+          th 影像表现
+          th 影响意见
+      tbody
+        tr(ng-repeat='chaosheng in pd.detail.inspectionRecord.chaoshengs')
+          td {{chaosheng.danganNum}}
+          td {{chaosheng.chaoshengNum}}
+          td {{chaosheng.zaoying}}
+          td {{chaosheng.zhuyuanNum}}
+          td {{chaosheng.bingchuangNum}}
+          td {{chaosheng.position}}
+          td {{chaosheng.date}}
+          td {{chaosheng.performance}}
+          td {{chaosheng.opinion}}
+        tr
+          td
+            md-button.md-fab.md-mini(aria-label='icon-add')
+              md-icon.md-mini-button-style(md-font-icon='icon-plus')
+            span.tianjiaxiaorongzhiliaojilu 添加超声检查记录
+
+mixin CTjiancha
+  md-tab(label='CT检查')
+    table.simple(ms-responsive-table='')
+      thead
+        tr
+          th 档案号
+          th CT号
+          th 是否增强
+          th 住院号
+          th 病床号
+          th 检查部位
+          th 送检日期
+          th 影像表现
+          th 影响意见
+      tbody
+        tr(ng-repeat='CT in pd.detail.inspectionRecord.CTs')
+          td {{CT.danganNum}}
+          td {{CT.CTNum}}
+          td {{CT.zengqiang}}
+          td {{CT.zhuyuanNum}}
+          td {{CT.bingchuangNum}}
+          td {{CT.position}}
+          td {{CT.date}}
+          td {{CT.performance}}
+          td {{CT.opinion}}
+        tr
+          td
+            md-button.md-fab.md-mini(aria-label='icon-add')
+              md-icon.md-mini-button-style(md-font-icon='icon-plus')
+            span.tianjiaxiaorongzhiliaojilu 添加CT检查记录
+
+mixin MRIjiancha
+  md-tab(label='MRI检查')
+    table.simple(ms-responsive-table='')
+      thead
+        tr
+          th 档案号
+          th MRI号
+          th 住院号
+          th 病床号
+          th 检查部位
+          th 送检日期
+          th 其他
+          th 影像表现
+          th 影响意见
+      tbody
+        tr(ng-repeat='MRI in pd.detail.inspectionRecord.MRIs')
+          td {{MRI.danganNum}}
+          td {{MRI.MRINum}}
+          td {{MRI.zhuyuanNum}}
+          td {{MRI.bingchuangNum}}
+          td {{MRI.position}}
+          td {{MRI.date}}
+          td {{MRI.other}}
+          td {{MRI.performance}}
+          td {{MRI.opinion}}
+        tr
+          td
+            md-button.md-fab.md-mini(aria-label='icon-add')
+              md-icon.md-mini-button-style(md-font-icon='icon-plus')
+            span.tianjiaxiaorongzhiliaojilu 添加MRI检查记录
+
+mixin PETCTjiancha
+  md-tab(label='PETCT检查')
+    table.simple(ms-responsive-table='')
+      thead
+        tr
+          th 档案号
+          th CT号
+          th 住院号
+          th 病床号
+          th 检查部位
+          th 送检日期
+          th 其他
+          th 影像表现
+          th 影响意见
+      tbody
+        tr(ng-repeat='PETCT in pd.detail.inspectionRecord.PETCTs')
+          td {{PETCT.danganNum}}
+          td {{PETCT.CTNum}}
+          td {{PETCT.zhuyuanNum}}
+          td {{PETCT.bingchuangNum}}
+          td {{PETCT.position}}
+          td {{PETCT.date}}
+          td {{PETCT.other}}
+          td {{PETCT.performance}}
+          td {{PETCT.opinion}}
+        tr
+          td
+            md-button.md-fab.md-mini(aria-label='icon-add')
+              md-icon.md-mini-button-style(md-font-icon='icon-plus')
+            span.tianjiaxiaorongzhiliaojilu 添加PETCT检查记录
+
+mixin binglifenxi
+  md-tab(label='病理分析')
+    table.simple(ms-responsive-table='')
+      thead
+        tr
+          th 档案号
+          th 病理号
+          th 标本号
+          th 病床号
+          th 检查部位
+          th 送检日期
+          th 诊断
+          th 影像表现
+          th 影响意见
+      tbody
+        tr(ng-repeat='bingli in pd.detail.inspectionRecord.binglis')
+          td {{bingli.danganNum}}
+          td {{bingli.bingliNum}}
+          td {{bingli.biaobenNum}}
+          td {{bingli.bingchuangNum}}
+          td {{bingli.type}}
+          td {{bingli.date}}
+          td {{bingli.zhenduan}}
+          td {{bingli.performance}}
+          td {{bingli.opinion}}
+        tr
+          td
+            md-button.md-fab.md-mini(aria-label='icon-add')
+              md-icon.md-mini-button-style(md-font-icon='icon-plus')
+            span.tianjiaxiaorongzhiliaojilu 添加病理分析记录

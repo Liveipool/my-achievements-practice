@@ -1,0 +1,123 @@
+mixin acography
+  md-tab(label='治疗记录')
+    .simple-table-container.md-whiteframe-4dp
+      .table-title
+        md-content.md-padding
+          .white-bg.md-whiteframe-4dp
+            md-tabs(md-dynamic-height='')
+              +xiaorongzhiliao
+              +hualiaojilu
+              +fangliaojilu
+              +waikeshoushu
+
+mixin xiaorongzhiliao
+  md-tab(label='消融治疗')
+    table.simple(ms-responsive-table='')
+      thead
+        tr
+          th 档案号
+          th 手术号
+          th 原发位置
+          th 确诊方式
+          th 病理诊断
+          th 免疫组化信息
+      tbody
+        tr(ng-repeat='xiaorong in pd.detail.acography.xiaorongs')
+          td {{xiaorong.danganNum}}
+          td {{xiaorong.shoushuNum}}
+          td {{xiaorong.position}}
+          td {{xiaorong.ways}}
+          td {{xiaorong.bingli}}
+          td {{xiaorong.mianyi}}
+        tr
+          td
+            md-button.md-fab.md-mini(aria-label='icon-add')
+              md-icon.md-mini-button-style(md-font-icon='icon-plus')
+            span.tianjiaxiaorongzhiliaojilu 添加消融治疗记录
+
+mixin hualiaojilu
+  md-tab(label='化疗记录')
+    table.simple(ms-responsive-table='')
+      thead
+        tr
+          th 档案号
+          th 手术号
+          th 发病日期
+          th 药品
+          th 疗程数
+          th 效果
+          th 病发
+          th 其他
+      tbody
+        tr(ng-repeat='hualiao in pd.detail.acography.hualiaos')
+          td {{hualiao.danganNum}}
+          td {{hualiao.shoushuNum}}
+          td {{hualiao.date}}
+          td {{hualiao.medicine}}
+          td {{hualiao.liaochengNum}}
+          td {{hualiao.effect}}
+          td {{hualiao.bingfa}}
+          td {{hualiao.other}}
+        tr
+          td
+            md-button.md-fab.md-mini(aria-label='icon-add')
+              md-icon.md-mini-button-style(md-font-icon='icon-plus')
+            span.tianjiaxiaorongzhiliaojilu 添加化疗记录
+
+mixin fangliaojilu
+  md-tab(label='放疗记录')
+    table.simple(ms-responsive-table='')
+      thead
+        tr
+          th 档案号
+          th 手术号
+          th 日期
+          th 方法
+          th 位置
+          th 剂量
+          th 病发
+          th 其他
+      tbody
+        tr(ng-repeat='fangliao in pd.detail.acography.fangliaos')
+          td {{fangliao.danganNum}}
+          td {{fangliao.shoushuNum}}
+          td {{fangliao.date}}
+          td {{fangliao.ways}}
+          td {{fangliao.position}}
+          td {{fangliao.amount}}
+          td {{fangliao.bingfa}}
+          td {{fangliao.other}}
+        tr
+          td
+            md-button.md-fab.md-mini(aria-label='icon-add')
+              md-icon.md-mini-button-style(md-font-icon='icon-plus')
+            span.tianjiaxiaorongzhiliaojilu 添加放疗记录
+
+mixin waikeshoushu
+  md-tab(label='外科手术')
+    table.simple(ms-responsive-table='')
+      thead
+        tr
+          th 档案号
+          th 手术号
+          th 日期
+          th 方法
+          th 位置
+          th 状态
+          th 病发
+          th 其他
+      tbody
+        tr(ng-repeat='waike in pd.detail.acography.waikes')
+          td {{waike.danganNum}}
+          td {{waike.shoushuNum}}
+          td {{waike.date}}
+          td {{waike.ways}}
+          td {{waike.position}}
+          td {{waike.state}}
+          td {{waike.bingfa}}
+          td {{waike.other}}
+        tr
+          td
+            md-button.md-fab.md-mini(aria-label='icon-add')
+              md-icon.md-mini-button-style(md-font-icon='icon-plus')
+            span.tianjiaxiaorongzhiliaojilu 添加外科手术记录
